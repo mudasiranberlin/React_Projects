@@ -1,54 +1,60 @@
 import React, { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 function Github() {
-  const [data, setData] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+//   const [data, setData] = useState({});
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState("");
 
-  useEffect(() => {
-    fetch("https://api.github.com/users/mudasiranberlin")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch GitHub profile");
-        }
+//   useEffect(() => {
+//     fetch("https://api.github.com/users/mudasiranberlin")
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw new Error("Failed to fetch GitHub profile");
+//         }
 
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setData(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setError("Unable to load GitHub profile");
-        setLoading(false);
-      });
-  }, []);
+//         return response.json();
+//       })
+//       .then((data) => {
+//         console.log(data);
+//         setData(data);
+//         setLoading(false);
+//       })
+//       .catch((error) => {
+//         console.error(error);
+//         setError("Unable to load GitHub profile");
+//         setLoading(false);
+//       });
+//   }, []);
 
-  if (loading) {
-    return (
-      <div className="flex min-h-[600px] items-center justify-center bg-slate-950">
-        <div className="text-center">
-          <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-gray-700 border-t-orange-500"></div>
+//   if (loading) {
+//     return (
+//       <div className="flex min-h-[600px] items-center justify-center bg-slate-950">
+//         <div className="text-center">
+//           <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-gray-700 border-t-orange-500"></div>
 
-          <p className="mt-4 text-gray-400">
-            Loading GitHub profile...
-          </p>
-        </div>
-      </div>
-    );
-  }
+//           <p className="mt-4 text-gray-400">
+//             Loading GitHub profile...
+//           </p>
+//         </div>
+//       </div>
+//     );
+//   }
 
-  if (error) {
-    return (
-      <div className="flex min-h-[600px] items-center justify-center bg-slate-950">
-        <p className="text-red-400">
-          {error}
-        </p>
-      </div>
-    );
-  }
+//   if (error) {
+//     return (
+//       <div className="flex min-h-[600px] items-center justify-center bg-slate-950">
+//         <p className="text-red-400">
+//           {error}
+//         </p>
+//       </div>
+//     );
+//   }
+
+const data=useLoaderData()
+
+console.log(data);
+
 
   return (
     <div className="min-h-screen bg-slate-950 px-4 py-16 sm:px-6 lg:px-8">
@@ -248,3 +254,18 @@ function Github() {
 }
 
 export default Github;
+
+
+export const githubInfoLoader = async () => {
+    const response = await fetch(
+      "https://api.github.com/users/mudasiranberlin"
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch GitHub data");
+    }
+
+    const data = await response.json();
+
+    return data;
+  };
