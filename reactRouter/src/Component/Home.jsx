@@ -53,7 +53,7 @@ function Home() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
 
               <Link
-                to="/projects"
+                to="/project"
                 className="rounded-xl bg-orange-600 px-7 py-4 text-center font-semibold shadow-lg shadow-orange-600/30 transition duration-300 hover:-translate-y-1 hover:bg-orange-500"
               >
                 Explore Projects →
@@ -224,7 +224,7 @@ function Home() {
           </p>
 
           <Link
-            to="/projects"
+            to="/project"
             className="mt-8 inline-block rounded-xl bg-white px-8 py-4 font-bold text-orange-600 transition hover:scale-105"
           >
             View My Projects

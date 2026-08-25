@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Contact from "./Contact";
+import Projects from "./Project";
+
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,11 +70,18 @@ function Header() {
               </li>
 
               <li>
-                <NavLink to="/contact" className={<Contact/>}>
+                <NavLink to="/contact" className={navLinkClass}>
                   Contact
                 </NavLink>
               </li>
 
+               <li>
+                <NavLink to="/project" className={navLinkClass}>
+                  Projects
+                </NavLink>
+              </li>
+
+               
             </ul>
 
           </div>

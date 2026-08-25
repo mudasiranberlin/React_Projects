@@ -56,7 +56,7 @@ function About() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
 
               <Link
-                to="/projects"
+                to="/project"
                 className="rounded-xl bg-orange-600 px-7 py-3 text-center font-semibold transition hover:-translate-y-1 hover:bg-orange-500"
               >
                 View My Projects →
@@ -271,7 +271,7 @@ function About() {
           </p>
 
           <Link
-            to="/projects"
+            to="/project"
             className="mt-8 inline-block rounded-xl bg-white px-8 py-4 font-bold text-orange-600 transition hover:scale-105"
           >
             Explore Projects →
