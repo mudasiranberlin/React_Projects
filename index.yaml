@@ -1,0 +1,20 @@
+# Kubernetes HostPath Volume Lab
+# Mounts a directory from the Kubernetes node into the Pod
+
+apiVersion: v1                    # Kubernetes API version
+kind: Pod                         # Create a Pod
+metadata:
+  name: myvolhostpath             # Pod name
+spec:
+  containers:
+  - name: testc                   # Container name
+    image: rockylinux:9           # Container image
+    command: ["/bin/bash", "-c", "sleep 15000"]  # Keep container running
+    volumeMounts:
+    - name: testvolume             # Reference the HostPath volume
+      mountPath: /tmp/hostpath     # Mount location inside the container
+  volumes:
+  - name: testvolume               # Volume name
+    hostPath:
+      path: /tmp/data               # Directory on the Kubernetes node
+ll /tmp/
