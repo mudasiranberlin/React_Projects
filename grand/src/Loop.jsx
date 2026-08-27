@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 function Loop() {
     const name=["Mudi","Aziz","Google","Maruti"]
@@ -18,6 +18,22 @@ function Loop() {
         }
     ]
 
+    const name1 = new Date();
+        // setdate(name1.toLocaleTimeString())
+    console.log(name1.toLocaleTimeString());
+    
+    
+
+    let [date,setdate]=useState('')
+    useEffect(()=>{ 
+        setInterval(()=>{
+            
+            const name1 = new Date();
+         setdate(name1.toLocaleTimeString())
+    console.log(name1.toLocaleTimeString());
+        },1000)
+    },[])
+
     
   return (
     <>
@@ -31,10 +47,14 @@ function Loop() {
     <hr />
     {
         data.map((item)=>(
-            <h2>{item.name}: { item.email }</h2>
+            <h2 key={item}>{item.name}: { item.email }</h2>
         
         ))
     }
+
+
+    <h1>Date: {date}</h1>
+
 
     </>
   )
