@@ -5,16 +5,20 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 import Form from './Form'
 import Skills from './Skills'
+import Check from './Check'
+import Loop from './Loop'
 
 function App() {
   
 
   return (
     <>
-    {/* <Form/> */}
+   <h3>Welcome back </h3>
+    {/* {<Form/>}
     <h1>Hello and welcome</h1>
     <Skills/>
-    
+    <Check/> */}
+    <Loop/>
 
     </>
   )
