@@ -3,23 +3,19 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import Form from './Form'
+import Skills from './Skills'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  const headerstyle={
-    color:"red",
-    backgroundColor:"green",
-    height:"100px"
-
-  }
+  
 
   return (
     <>
-    <h1 style={headerstyle}>Mudasir Aziz</h1>
+    {/* <Form/> */}
+    <h1>Hello and welcome</h1>
+    <Skills/>
+    
 
-    <h2 className='header'>Mudasir is Good</h2>
-      
     </>
   )
 }

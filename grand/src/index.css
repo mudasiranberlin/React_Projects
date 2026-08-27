@@ -2,3 +2,16 @@
   color: blue;
   background-color: yellowgreen;
 }
+
+.forms{
+  height: 800px;
+  border: 1px solid black;
+  width: 400px;
+  background-color: bisque;
+}
+input{
+  height: 20px;
+  text-align: center;
+  margin: 15px;
+  padding: 10px;
+}
