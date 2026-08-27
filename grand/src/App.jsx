@@ -7,18 +7,31 @@ import Form from './Form'
 import Skills from './Skills'
 import Check from './Check'
 import Loop from './Loop'
+import Ref from './Ref'
+import Functionpass from './Functionpass'
+import UseFOrm from './UseFOrm'
 
 function App() {
   
+  const handle= (name)=>{
+        console.log(name);
+        
+        alert(`hello and welcome to ${name}`)
+    }
 
   return (
     <>
-   <h3>Welcome back </h3>
-    {/* {<Form/>}
+   {/* <h3>Welcome back </h3>
+    {<Form/>}
     <h1>Hello and welcome</h1>
     <Skills/>
-    <Check/> */}
+    <Check/>
     <Loop/>
+    <Ref/>
+
+    <Functionpass handle={handle}name="mudi"/> */}
+
+    <UseFOrm/>
 
     </>
   )

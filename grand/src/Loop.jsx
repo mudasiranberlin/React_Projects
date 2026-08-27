@@ -20,7 +20,7 @@ function Loop() {
 
     const name1 = new Date();
         // setdate(name1.toLocaleTimeString())
-    console.log(name1.toLocaleTimeString());
+    // console.log(name1.toLocaleTimeString());
     
     
 
@@ -30,7 +30,7 @@ function Loop() {
             
             const name1 = new Date();
          setdate(name1.toLocaleTimeString())
-    console.log(name1.toLocaleTimeString());
+    // console.log(name1.toLocaleTimeString());
         },1000)
     },[])
 
@@ -39,15 +39,15 @@ function Loop() {
     <>
     <h1>Mudasir</h1>
     {
-        name.map((item)=>(
-            <h2>{item}</h2>
+        name.map((item,index)=>(
+            <h2 key={index}>{item}</h2>
         
         ))
     }
     <hr />
     {
-        data.map((item)=>(
-            <h2 key={item}>{item.name}: { item.email }</h2>
+        data.map((item,index)=>(
+            <h2 key={index}>{item.name}: { item.email }</h2>
         
         ))
     }
