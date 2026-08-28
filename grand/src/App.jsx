@@ -10,6 +10,7 @@ import Loop from './Loop'
 import Ref from './Ref'
 import Functionpass from './Functionpass'
 import UseFOrm from './UseFOrm'
+import Usetrans from './Usetrans'
 
 function App() {
   
@@ -29,9 +30,10 @@ function App() {
     <Loop/>
     <Ref/>
 
-    <Functionpass handle={handle}name="mudi"/> */}
+    <Functionpass handle={handle}name="mudi"/>
+    <UseFOrm/> */}
 
-    <UseFOrm/>
+    <Usetrans/>
 
     </>
   )
