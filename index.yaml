@@ -1,20 +1,34 @@
-# Kubernetes HostPath Volume Lab
-# Mounts a directory from the Kubernetes node into the Pod
-
-apiVersion: v1                    # Kubernetes API version
-kind: Pod                         # Create a Pod
+# create a file vi live.yaml
+apiVersion: v1                # API version for Kubernetes core objects
+kind: Pod                     # We are defining a Pod resource
 metadata:
-  name: myvolhostpath             # Pod name
+  name: mylivenessprobe       # Name of the Pod
+  labels:
+    test: liveness            # Label to identify the Pod
 spec:
   containers:
-  - name: testc                   # Container name
-    image: rockylinux:9           # Container image
-    command: ["/bin/bash", "-c", "sleep 15000"]  # Keep container running
-    volumeMounts:
-    - name: testvolume             # Reference the HostPath volume
-      mountPath: /tmp/hostpath     # Mount location inside the container
-  volumes:
-  - name: testvolume               # Volume name
-    hostPath:
-      path: /tmp/data               # Directory on the Kubernetes node
-ll /tmp/
+  - name: liveness            # Name of the container inside the Pod
+    image: ubuntu             # Base image used for the container
+    args: ["/bin/sh", "-c", "touch /tmp/healthy; sleep 1000"]
+    # The container runs a shell command:
+    # 1. Creates a file /tmp/healthy
+    # 2. Sleeps for a long time (simulating a running process)
+
+    livenessProbe:            # Liveness probe definition
+      exec:                   # Probe runs a command inside the container
+        command: ["cat", "/tmp/healthy"]
+        # If the file exists, 'cat' succeeds → container is healthy
+        # If the file is missing, probe fails → container is restarted
+      initialDelaySeconds: 5  # Wait 5 seconds after container starts before first probe
+      periodSeconds: 5        # Run the probe every 5 seconds
+      timeoutSeconds: 30      # Probe must finish within 30 seconds
+kubectl apply -f live.yaml
+kubectl get pods
+kubectl exec mylivenessprobe -it -- /bin/bash
+cat /tmp/healthy
+echo $?  # output is 0 # you can use for others like  cat /tmp/mudi   and then echo $? u will get 0
+rm /tmp/healthy  # now i will delete the file and then you see 
+echo $? # get diiferent output
+# when you will do that then the kubernets will create new one conatiner 
+kubectl delete -f live.yaml
+
