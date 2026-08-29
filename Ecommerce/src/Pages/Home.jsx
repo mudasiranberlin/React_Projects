@@ -28,7 +28,7 @@ function Home({cart}) {
   return (
     <>
      <title>Ecommerce Project </title>
-     <Header cart={cart}/>
+     <Header cart={cart} />
 
     <div className="home-page">
       <div className="products-grid">

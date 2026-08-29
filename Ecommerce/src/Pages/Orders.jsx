@@ -3,10 +3,10 @@ import './order/orders.css'
 import './order/tracking.css'
 import Header from '../Componenets/Header'
 
-function Orders() {
+function Orders({cart}) {
   return (
     <>
-    <Header/>
+    <Header cart={cart} />
 
     <div class="orders-page">
       <div class="page-title">Your Orders</div>

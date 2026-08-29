@@ -3,6 +3,7 @@ import React from 'react'
 function Tracking() {
   return (
     <>
+    <Header cart={cart} />
     <div class="header">
       <div class="left-section">
         <a href="/" class="header-link">
