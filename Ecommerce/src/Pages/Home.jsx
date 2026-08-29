@@ -1,17 +1,25 @@
 import React from 'react'
+import axios from 'axios';
 import './Home.css'
 import Header from '../Componenets/Header'
 import {products} from './products.js'
 
 function Home() {
-  fetch('http://localhost:3000/api/products')
+  /* fetch('http://localhost:3000/api/products')
   .then((response)=>{
     console.log(response);
     return response.json()
   }).then((data)=>{
       console.log(data);
-      
-    })
+       })
+    */
+   axios.get('http://localhost:3000/api/products')
+  .then((response)=>{
+    console.log(response.data);
+    return response.data
+    
+    
+  })
   return (
     <>
      <title>Ecommerce Project </title>
