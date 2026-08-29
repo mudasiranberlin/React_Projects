@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Home from './Startcode/Pages/Home'
 import { Route, Routes } from 'react-router'
+import Checkout from './Startcode/Pages/Checkout'
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
     <>
     <Routes>
       <Route index element={<Home/>} />
-       <Route path='checkout' element={<h1>Welcome to checkout page</h1>} />
+       <Route path='checkout' element={<Checkout/>} />
     </Routes>
      
     </>

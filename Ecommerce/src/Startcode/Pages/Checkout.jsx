@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Checkout</title>
+import React from 'react'
+import './checkout/checkout-header.css'
+import './checkout/checkout.css'
 
-    <!-- This code is needed for responsive design to work.
-      (Responsive design = make the website look good on
-      smaller screen sizes like a phone or a tablet). -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Load a font called Roboto from Google Fonts. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Here are the CSS files for this page. -->
-    <link rel="stylesheet" href="styles/shared/general.css">
-    <link rel="stylesheet" href="styles/pages/checkout/checkout-header.css">
-    <link rel="stylesheet" href="styles/pages/checkout/checkout.css">
-  </head>
-  <body>
+function Checkout() {
+  return (
+    <>
+     <title>Checkout</title>
+     
     <div class="checkout-header">
       <div class="header-content">
         <div class="checkout-header-left-section">
@@ -231,5 +219,8 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
+    </>
+  )
+}
+
+export default Checkout
