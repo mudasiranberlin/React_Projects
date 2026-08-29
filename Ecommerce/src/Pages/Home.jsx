@@ -4,6 +4,14 @@ import Header from '../Componenets/Header'
 import {products} from './products.js'
 
 function Home() {
+  fetch('http://localhost:3000/api/products')
+  .then((response)=>{
+    console.log(response);
+    return response.json()
+  }).then((data)=>{
+      console.log(data);
+      
+    })
   return (
     <>
      <title>Ecommerce Project </title>
