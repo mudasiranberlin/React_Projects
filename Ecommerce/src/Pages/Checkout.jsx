@@ -1,7 +1,7 @@
 import React from 'react'
 import './checkout/checkout-header.css'
 import './checkout/checkout.css'
-import Header from '../../Componenets/Header'
+import Header from '../Componenets/Header'
 
 function Checkout() {
   return (

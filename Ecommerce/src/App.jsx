@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import Home from './Startcode/Pages/Home'
+import Home from './Pages/Home'
 import { Route, Routes } from 'react-router'
-import Checkout from './Startcode/Pages/Checkout'
-import Orders from './Startcode/Pages/Orders'
-import Tracking from './Startcode/Pages/Tracking'
+import Checkout from './Pages/Checkout'
+import Orders from './Pages/Orders'
+import Tracking from './Pages/Tracking'
 
 function App() {
 

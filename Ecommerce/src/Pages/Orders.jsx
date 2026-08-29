@@ -1,7 +1,7 @@
 import React from 'react'
 import './order/orders.css'
 import './order/tracking.css'
-import Header from '../../Componenets/Header'
+import Header from '../Componenets/Header'
 
 function Orders() {
   return (
