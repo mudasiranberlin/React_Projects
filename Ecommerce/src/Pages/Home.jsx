@@ -4,7 +4,7 @@ import './Home.css'
 import Header from '../Componenets/Header'
 
 
-function Home() {
+function Home({cart}) {
   /* fetch('http://localhost:3000/api/products')
   .then((response)=>{
     console.log(response);
@@ -15,7 +15,7 @@ function Home() {
     */
 
        const [products,setproducts]=useState([])
-       const [cart,setcart]=useState([])
+       
 
   useEffect(()=>{
     axios.get('http://localhost:3000/api/products')
@@ -23,12 +23,6 @@ function Home() {
     console.log(response.data);
     setproducts(response.data)
   })
-
-   axios.get('http://localhost:3000/api/cart-items')
-  .then((response)=>{
-    setcart(response.data)
-  })
-
   },[])
    
   return (
