@@ -15,6 +15,7 @@ function Home() {
     */
 
        const [products,setproducts]=useState([])
+       const [cart,setcart]=useState([])
 
   useEffect(()=>{
     axios.get('http://localhost:3000/api/products')
@@ -23,12 +24,17 @@ function Home() {
     setproducts(response.data)
   })
 
+   axios.get('http://localhost:3000/api/cart-items')
+  .then((response)=>{
+    setcart(response.data)
+  })
+
   },[])
    
   return (
     <>
      <title>Ecommerce Project </title>
-     <Header/>
+     <Header cart={cart}/>
 
     <div className="home-page">
       <div className="products-grid">
