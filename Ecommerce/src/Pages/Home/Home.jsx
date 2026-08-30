@@ -18,13 +18,22 @@ function Home({cart}) {
        const [products,setproducts]=useState([])
        
 
-  useEffect(()=>{
-    axios.get('http://localhost:3000/api/products')
-  .then((response)=>{
-    console.log(response.data);
+  // useEffect(()=>{
+  //   axios.get('/api/products')
+  // .then((response)=>{
+  //   console.log(response.data);
+  //   setproducts(response.data)
+  // })
+  // },[])
+
+ useEffect(()=>{
+  const getHomedata = async()=>{
+    const response = await axios.get('/api/products')
     setproducts(response.data)
-  })
+  }  
+  getHomedata();
   },[])
+
    
   return (
     <>
