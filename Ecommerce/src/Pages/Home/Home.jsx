@@ -5,7 +5,7 @@ import './Home.css'
 import Header from '../../Componenets/Header'
 
 
-function Home({cart}) {
+function Home({cart, loardCart}) {
   /* fetch('http://localhost:3000/api/products')
   .then((response)=>{
     console.log(response);
@@ -41,7 +41,7 @@ function Home({cart}) {
      <Header cart={cart} />
 
     <div className="home-page">
-     <ProductsGrid products={ products}/>
+     <ProductsGrid products={ products} loardCart={loardCart} />
     </div>
     </>
   )
