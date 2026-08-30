@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Home from './Pages/Home'
+import Home from './Pages/Home/Home'
 import { Route, Routes } from 'react-router'
-import Checkout from './Pages/Checkout'
-import Orders from './Pages/Orders'
+import Checkout from './Pages/checkout/Checkout'
+import Orders from './Pages/order/Orders'
 import Tracking from './Pages/Tracking'
 import axios from 'axios';
 

@@ -1,10 +1,10 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import './order/orders.css'
-import './order/tracking.css'
-import Header from '../Componenets/Header'
+import './orders.css'
+import './tracking.css'
+import Header from '../../Componenets/Header'
 import axios from 'axios';
 import dayjs from 'dayjs';
-import { formatmoney } from '../utils/money';
+import { formatmoney } from '../../utils/money';
 
 function Orders({cart}) {
   const [orders,setOrders] = useState([])
