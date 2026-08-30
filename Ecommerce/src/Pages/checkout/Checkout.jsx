@@ -57,7 +57,7 @@ useEffect(()=>{
 
       <div class="checkout-grid">
         <Ordersummary cart={cart} deliveryOptions={deliveryOptions} loardCart={loardCart}/>
-        <PyamentSummary paymentSummary={paymentSummary} />
+        <PyamentSummary paymentSummary={paymentSummary} loardCart={loardCart} />
       </div>
     </div>
     </>

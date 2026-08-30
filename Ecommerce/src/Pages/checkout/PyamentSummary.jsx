@@ -1,8 +1,17 @@
 import React from 'react'
 import { formatmoney } from '../../utils/money'
 import dayjs from 'dayjs'
+import axios from 'axios'
+import { useNavigate } from 'react-router'
 
-function PyamentSummary({paymentSummary,}) {
+function PyamentSummary({paymentSummary,loardCart}) {
+    const navigate = useNavigate();
+
+    const createOrder =async()=>{
+        await axios.post('/api/orders')
+        await loardCart()
+        navigate('/orders')
+    }
   return (
     <>
     <div class="payment-summary">
@@ -37,7 +46,7 @@ function PyamentSummary({paymentSummary,}) {
                   <div class="payment-summary-money">{formatmoney(paymentSummary.totalCostCents)}</div>
                 </div>
     
-                <button class="place-order-button button-primary">
+                <button class="place-order-button button-primary" onClick={createOrder}>
                   Place your order
                 </button>
                     </>
