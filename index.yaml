@@ -1,34 +1,31 @@
-# create a file vi live.yaml
-apiVersion: v1                # API version for Kubernetes core objects
-kind: Pod                     # We are defining a Pod resource
+# Now lets create the screts 
+echo "root" > username.txt
+echo "mypassword123" > password.txt
+kubectl create secret generic mysecret --from-file=username.txt  --from-file=password.txt
+kubectl get secret
+kubectl describe secret mysecret
+# vi deploysecret.yaml
+
+apiVersion: v1
+kind: Pod
 metadata:
-  name: mylivenessprobe       # Name of the Pod
-  labels:
-    test: liveness            # Label to identify the Pod
+  name: myvolsecret                  # Pod name
 spec:
   containers:
-  - name: liveness            # Name of the container inside the Pod
-    image: ubuntu             # Base image used for the container
-    args: ["/bin/sh", "-c", "touch /tmp/healthy; sleep 1000"]
-    # The container runs a shell command:
-    # 1. Creates a file /tmp/healthy
-    # 2. Sleeps for a long time (simulating a running process)
+  - name: c1                         # Container name
+    image: centos:7                  # Use a valid CentOS tag
+    command: ["/bin/bash", "-c", "while true; do echo Technical-guftgu; sleep 5 ; done"]
+    volumeMounts:
+    - name: testsecret               # Refers to the volume defined below
+      mountPath: "/tmp/mysecrets"    # Secret files mounted here (read-only by default)
 
-    livenessProbe:            # Liveness probe definition
-      exec:                   # Probe runs a command inside the container
-        command: ["cat", "/tmp/healthy"]
-        # If the file exists, 'cat' succeeds → container is healthy
-        # If the file is missing, probe fails → container is restarted
-      initialDelaySeconds: 5  # Wait 5 seconds after container starts before first probe
-      periodSeconds: 5        # Run the probe every 5 seconds
-      timeoutSeconds: 30      # Probe must finish within 30 seconds
-kubectl apply -f live.yaml
-kubectl get pods
-kubectl exec mylivenessprobe -it -- /bin/bash
-cat /tmp/healthy
-echo $?  # output is 0 # you can use for others like  cat /tmp/mudi   and then echo $? u will get 0
-rm /tmp/healthy  # now i will delete the file and then you see 
-echo $? # get diiferent output
-# when you will do that then the kubernets will create new one conatiner 
-kubectl delete -f live.yaml
+  volumes:
+  - name: testsecret                 # Volume name referenced above
+    secret:
+      secretName: mysecret           # Must match the Secret you created
 
+kubectl apply -f deploysecret.yaml
+kubectl exec myvolsecret -it -- /bin/bash
+cd /tmp
+ls
+cat password.txt
