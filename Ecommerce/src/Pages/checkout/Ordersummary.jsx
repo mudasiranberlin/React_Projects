@@ -3,7 +3,7 @@ import React from 'react'
 import { formatmoney } from '../../utils/money';
 import Deliveryoptions from './Deliveryoptions';
 
-function Ordersummary({cart,deliveryOptions}) {
+function Ordersummary({cart,deliveryOptions,loardCart}) {
   return (
     <>
     
@@ -43,7 +43,7 @@ function Ordersummary({cart,deliveryOptions}) {
                     </div>
                   </div>
 
-                  <Deliveryoptions deliveryOptions={deliveryOptions} cartItem={cartItem}/>
+                  <Deliveryoptions deliveryOptions={deliveryOptions} cartItem={cartItem} loardCart={loardCart}/>
                 </div>
               </div>
                   )

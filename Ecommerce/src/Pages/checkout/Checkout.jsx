@@ -9,7 +9,7 @@ import { formatmoney } from '../../utils/money';
 import PyamentSummary from './PyamentSummary';
 
 
-function Checkout({cart}) {
+function Checkout({cart,loardCart}) {
   const [deliveryOptions,setDeliveryOptions] = useState([])
   const [paymentSummary,setPaymentSummary]=useState(null)
 
@@ -20,7 +20,7 @@ useEffect(()=>{
       setPaymentSummary(response.data)
     }
     getdata();
-  },[])
+  },[cart])
 
 
   useEffect(()=>{
@@ -56,7 +56,7 @@ useEffect(()=>{
       <div class="page-title">Review your order</div>
 
       <div class="checkout-grid">
-        <Ordersummary cart={cart} deliveryOptions={deliveryOptions}/>
+        <Ordersummary cart={cart} deliveryOptions={deliveryOptions} loardCart={loardCart}/>
         <PyamentSummary paymentSummary={paymentSummary} />
       </div>
     </div>

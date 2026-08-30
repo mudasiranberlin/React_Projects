@@ -33,7 +33,7 @@ function App() {
     <>
     <Routes>
   <Route index element={<Home cart={cart} loardCart={loardCart} />} />
-  <Route path="/checkout" element={<Checkout cart={cart} />} />
+  <Route path="/checkout" element={<Checkout cart={cart} loardCart={loardCart} />} />
   <Route path="/orders" element={<Orders cart={cart} />} />
   <Route path="/tracking" element={<Tracking cart={cart} />} />
 </Routes>
