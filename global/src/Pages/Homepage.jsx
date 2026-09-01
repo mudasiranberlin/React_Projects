@@ -2,20 +2,23 @@ import React, { useEffect, useState } from 'react'
 import Header from '../Component/Header'
 import Coursel from './Coursel'
 import Footer from '../Component/Footer'
-import { products } from '../products'
+// import { products } from '../products'
 import axios from 'axios';
 
-function Homepage() {
+function Homepage({cart}) {
   const [products,setProducts]=useState([])
+  
   useEffect(()=>{
-    axios.get('http://localhost:3000/api/products').then((response)=>{
+    axios.get('api/products').then((response)=>{
       setProducts(response.data)
-    console.log(response.data);
+    // console.log(response.data);
   })
   },[])
+
+
   return (
     <>
-    <Header/>
+    <Header cart={cart}/>
     <Coursel/>
 <div className="container-fluid bg-light py-4">
 

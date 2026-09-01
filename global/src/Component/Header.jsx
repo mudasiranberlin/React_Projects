@@ -1,7 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router'
+import axios from 'axios';
 
-function Header() {
+
+function Header({cart}) {
+  let totalQuantity = 0;
+  cart.forEach((cartItem)=>{
+    totalQuantity +=cartItem.quantity
+    console.log(cartItem);
+  })
+  
   return (
     <>
 <div className="bg-dark">
@@ -77,7 +85,7 @@ function Header() {
               fontSize: "11px"
             }}
           >
-            3
+            {totalQuantity}
           </span>
 
           <span className="ms-1">Cart</span>

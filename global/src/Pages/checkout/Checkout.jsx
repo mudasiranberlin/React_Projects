@@ -2,13 +2,23 @@ import React from 'react'
 import Header from '../../Component/Header'
 import Footer from '../../Component/Footer'
 
-function Checkout() {
+function Checkout({cart}) {
   return (
     <>
     <title>Checkout</title>
         <Header/>
       <div className="bg-light min-vh-100 py-4">
         <div className="container">
+          {
+            cart.map((cartItem)=>{
+              return(
+                <>
+
+                </>
+              )
+
+            })
+          }
 
           {/* Page Title */}
           <h2 className="fw-bold mb-4">
