@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Component/Header'
 import Coursel from './Coursel'
 import Footer from '../Component/Footer'
 import { products } from '../products'
+import axios from 'axios';
 
 function Homepage() {
+  const [products,setProducts]=useState([])
+  useEffect(()=>{
+    axios.get('http://localhost:3000/api/products').then((response)=>{
+      setProducts(response.data)
+    console.log(response.data);
+  })
+  },[])
   return (
     <>
     <Header/>

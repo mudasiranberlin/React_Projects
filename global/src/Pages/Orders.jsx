@@ -5,6 +5,7 @@ import Footer from '../Component/Footer'
 function Orders() {
   return (
     <>
+    <title>Order</title>
     <Header/>
 
     <div className="bg-light min-vh-100 py-4">
