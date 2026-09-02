@@ -15,12 +15,8 @@ function Homepage({cart}) {
     // console.log(response.data);
   })
   },[])
-
-
   return (
     <>
-    
-    
     <Header cart={cart}/>
     <Coursel/>
 <div className="container-fluid bg-light py-4">
