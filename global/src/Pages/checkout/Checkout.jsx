@@ -13,6 +13,7 @@ function Checkout({cart}) {
             cart.map((cartItem)=>{
               return(
                 <>
+                
 
                 </>
               )

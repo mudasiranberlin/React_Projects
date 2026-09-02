@@ -7,6 +7,7 @@ import axios from 'axios';
 
 function Homepage({cart}) {
   const [products,setProducts]=useState([])
+  console.log("card",cart.productId);
   
   useEffect(()=>{
     axios.get('api/products').then((response)=>{
@@ -18,6 +19,8 @@ function Homepage({cart}) {
 
   return (
     <>
+    
+    
     <Header cart={cart}/>
     <Coursel/>
 <div className="container-fluid bg-light py-4">
