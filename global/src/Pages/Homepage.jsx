@@ -7,12 +7,10 @@ import axios from 'axios';
 
 function Homepage({cart}) {
   const [products,setProducts]=useState([])
-  console.log("card",cart.productId);
-  
   useEffect(()=>{
     axios.get('api/products').then((response)=>{
       setProducts(response.data)
-    // console.log(response.data);
+    //  console.log(response.data);
   })
   },[])
   return (
