@@ -5,6 +5,8 @@ import Header from '../../Component/Header'
 function Order() {
   return (
     <>
+    <title>Orders</title>
+    <link rel="icon" type="image/svg+xml" href="images/Box.png" />
     <Header/>
 
     <div class="orders-page">

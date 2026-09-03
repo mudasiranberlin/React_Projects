@@ -5,6 +5,8 @@ import Header from '../../Component/Header'
 function Tracking() {
   return (
     <>
+    <title>Tracking</title>
+    <link rel="icon" type="image/svg+xml" href="images/tracking-favicon.png" />
    <Header/>
 
     <div class="tracking-page">

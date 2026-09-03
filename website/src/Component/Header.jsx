@@ -1,38 +1,53 @@
 import React from 'react'
 import './header.css'
+import { Link,NavLink } from 'react-router'
 
-function Header() {
+import CartIcon from "../assets/images/icons/cart-icon.png";
+import SearchIcon from "../assets/images/icons/search-icon.png";
+import LogoWhite from "../assets/images/logo-white.png";
+import Mobilelogo from "../assets/images/icons/mobile-logo-white.png";
+
+
+function Header({cart}) {
+  console.log(cart);
+  
+
+  let totalQuantity=0
+  cart.forEach((cartItem)=>{
+    totalQuantity +=cartItem.quantity;
+  });
+  
   return (
     <>
     <div className="header">
       <div className="left-section">
-        <a href="/" className="header-link">
+        <NavLink to="/" className="header-link">
           <img className="logo"
-            src="images/logo-white.png" />
+            src={LogoWhite} />
           <img className="mobile-logo"
-            src="images/mobile-logo-white.png" />
-        </a>
+            src={Mobilelogo} />
+        </NavLink>
       </div>
 
       <div className="middle-section">
         <input className="search-bar" type="text" placeholder="Search" />
 
         <button className="search-button">
-          <img className="search-icon" src="images/icons/search-icon.png" />
+          <img className="search-icon" src={SearchIcon} />
         </button>
       </div>
 
       <div className="right-section">
-        <a className="orders-link header-link" href="/orders">
+        <NavLink className="orders-link header-link" to="/orders">
 
           <span className="orders-text">Orders</span>
-        </a>
+        </NavLink>
 
-        <a className="cart-link header-link" href="/checkout">
-          <img className="cart-icon" src="images/icons/cart-icon.png" />
-          <div className="cart-quantity">3</div>
+        <NavLink className="cart-link header-link" to="/checkout">
+          <img className="cart-icon" src={CartIcon} />
+          <div className="cart-quantity">{totalQuantity}</div>
           <div className="cart-text">Cart</div>
-        </a>
+        </NavLink>
       </div>
     </div>
     </>
