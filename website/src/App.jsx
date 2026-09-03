@@ -14,6 +14,7 @@ function App() {
       <Route index element={<Homepage/>}/>
       <Route path='checkout' element={<Checkout/>}/>
       <Route path='orders' element={<Order/>}/>
+      <Route path='tracking' element={<Tracking/>}/>
 
     </Routes>
       
