@@ -9,7 +9,7 @@ function Checkout({cart}) {
         <Header/>
       <div className="bg-light min-vh-100 py-4">
         <div className="container">
-          {
+          {/* {
             cart.map((cartItem)=>{
               return(
                 <>
@@ -19,7 +19,7 @@ function Checkout({cart}) {
               )
 
             })
-          }
+          } */}
 
           {/* Page Title */}
           <h2 className="fw-bold mb-4">

@@ -6,10 +6,12 @@ import axios from 'axios';
 function Header({cart}) {
 let totalQuantity = 0;
 
-cart.forEach((cartItem) => {
-  totalQuantity += cartItem.quantity;
-  console.log(cartItem);
-});
+console.log(cart);
+
+// cart.forEach((cartItem) => {
+//   totalQuantity += cartItem.quantity;
+//   console.log(cartItem);
+// });
 
   
   return (
