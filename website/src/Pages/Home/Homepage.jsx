@@ -1,6 +1,5 @@
 import React from 'react'
 import './index.css'
-import './general.css'
 import './header.css'
 
 
