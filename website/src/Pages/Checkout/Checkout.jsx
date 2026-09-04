@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './checkout.css'
 import Header from '../../Component/Header'
 import CheckHead from '../../Component/CheckHead'
 import { formatMoney } from '../../utils/money'
+import axios from 'axios';
 
 function Checkout({cart}) {
+  const [deliveryOptions,setDeliveryOptions]= useState([])
+  useEffect(()=>{
+    axios.get('/api/delivery-options?expand=estimatedDeliveryTime')
+    .then((response)=>{
+      setDeliveryOptions(response.data)
+    })
+
+  },[])
   return (
     <>
+
     <title>Checkout</title>
     <link rel="icon" type="image/svg+xml" href="images/Trol.png" />
     {/* <Header cart={cart} /> */}
