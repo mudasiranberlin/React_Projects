@@ -2,6 +2,7 @@ import React from 'react'
 import './checkout.css'
 import Header from '../../Component/Header'
 import CheckHead from '../../Component/CheckHead'
+import { formatMoney } from '../../utils/money'
 
 function Checkout({cart}) {
   return (
@@ -33,11 +34,11 @@ function Checkout({cart}) {
                   {cartItem.product.name}
                 </div>
                 <div class="product-price">
-                  ${}
+                  {formatMoney(cartItem.product.priceCents)}
                 </div>
                 <div class="product-quantity">
                   <span>
-                    Quantity: <span class="quantity-label">2</span>
+                    Quantity: <span class="quantity-label">{cartItem.quantity}</span>
                   </span>
                   <span class="update-quantity-link link-primary">
                     Update

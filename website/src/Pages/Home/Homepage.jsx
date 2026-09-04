@@ -50,7 +50,7 @@ function Homepage({cart}) {
           </div>
 
           <div className="product-price">
-            {formatMoney}
+            {formatMoney(product.priceCents)}
           </div>
 
           <div className="product-quantity-container">
