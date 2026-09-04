@@ -37,7 +37,7 @@ function Checkout({cart}) {
               return(
                 <div key={cartItem.productId} class="cart-item-container">
             <div class="delivery-date">
-              Delivery date: {dayjs(selectedDeliveryOption.estimatedDeliveryTimeMs).format('dddd,MMMM D')}Tuesday, June 21
+              Delivery date: {dayjs(selectedDeliveryOption.estimatedDeliveryTimeMs).format('dddd,MMMM D')}
             </div>
 
             <div class="cart-item-details-grid">
