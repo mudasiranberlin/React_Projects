@@ -8,10 +8,10 @@ let totalQuantity = 0;
 
 console.log(cart);
 
-// cart.forEach((cartItem) => {
-//   totalQuantity += cartItem.quantity;
-//   console.log(cartItem);
-// });
+cart.forEach((cartItem) => {
+  totalQuantity += cartItem.quantity;
+  console.log(cartItem);
+});
 
   
   return (

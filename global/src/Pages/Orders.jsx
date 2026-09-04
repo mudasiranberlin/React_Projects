@@ -6,7 +6,7 @@ function Orders({cart}) {
   return (
     <>
     <title>Order</title>
-    <Header/>
+    <Header cart={cart}/>
 
     <div className="bg-light min-vh-100 py-4">
 

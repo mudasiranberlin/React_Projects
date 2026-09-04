@@ -6,6 +6,7 @@ import {Routes,Route} from 'react-router'
 import Checkout from './Pages/checkout/Checkout'
 import Orders from './Pages/Orders'
 import axios from 'axios';
+import Tracking from './Pages/Tracking'
 
 
 function App() {
@@ -25,6 +26,7 @@ const [cart,setCart]=useState([])
       <Route index element={<Homepage cart={cart} />}/> 
       <Route path='checkout' element={<Checkout cart={cart} />}/> 
       <Route path='orders' element={<Orders cart={cart}/>}/> 
+      <Route path='tracking' element={<Tracking cart={cart}/>}/> 
     </Routes>
     </>
   )
