@@ -2,12 +2,12 @@ import React from 'react'
 import './tracking.css'
 import Header from '../../Component/Header'
 
-function Tracking() {
+function Tracking({cart}) {
   return (
     <>
     <title>Tracking</title>
     <link rel="icon" type="image/svg+xml" href="images/tracking-favicon.png" />
-   <Header/>
+   <Header cart={cart}/>
 
     <div class="tracking-page">
       <div class="order-tracking">

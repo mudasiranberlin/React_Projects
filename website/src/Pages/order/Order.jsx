@@ -2,12 +2,12 @@ import React from 'react'
 import './orders.css'
 import Header from '../../Component/Header'
 
-function Order() {
+function Order({cart}) {
   return (
     <>
     <title>Orders</title>
     <link rel="icon" type="image/svg+xml" href="images/Box.png" />
-    <Header/>
+    <Header cart={cart} />
 
     <div class="orders-page">
       <div class="page-title">Your Orders</div>
