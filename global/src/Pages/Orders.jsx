@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../Component/Header'
 import Footer from '../Component/Footer'
+import axios from 'axios';
 
 function Orders({cart}) {
   return (

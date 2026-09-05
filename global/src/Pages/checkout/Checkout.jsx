@@ -8,6 +8,7 @@ import axios from 'axios'
 import dayjs from 'dayjs'
 
 function Checkout({ cart }) {
+  const [paymentSummary,setPaymentSummary]=useState(null)
   const [deliveryOptions, setDeliveryOptions] = useState([])
   useEffect(() => {
     axios.get('/api/delivery-options?expand=estimatedDeliveryTime')
@@ -16,6 +17,14 @@ function Checkout({ cart }) {
       })
 
   }, [])
+
+  useEffect(()=>{
+    axios.get('/api/payment-summary')
+    .then((response)=>{
+      setPaymentSummary(response.data)
+    })
+
+  },[])
   return (
     <>
       <title>Checkout</title>
@@ -182,23 +191,21 @@ function Checkout({ cart }) {
                 <div className="h4 fw-bold mb-4">
                   Payment Summary
                 </div>
-
-
-                {/* Items */}
+                //Hello
+                {
+                  paymentSummary&&(
+                    <>
                 <div className="d-flex justify-content-between mb-3">
 
                   <div>
-                    Items (3):
+                    Items ({paymentSummary.totalItems}):
                   </div>
 
                   <div className="fw-semibold">
-                    $42.75
+                    {formatMoney(paymentSummary.productCostCents)}
                   </div>
 
                 </div>
-
-
-                {/* Shipping */}
                 <div className="d-flex justify-content-between mb-3">
 
                   <div>
@@ -206,16 +213,13 @@ function Checkout({ cart }) {
                   </div>
 
                   <div className="fw-semibold">
-                    $4.99
+                    {formatMoney(paymentSummary.shippingCostCents)}
                   </div>
 
                 </div>
 
 
                 <hr />
-
-
-                {/* Total Before Tax */}
                 <div className="d-flex justify-content-between mb-3">
 
                   <div>
@@ -223,13 +227,11 @@ function Checkout({ cart }) {
                   </div>
 
                   <div className="fw-semibold">
-                    $47.74
+                    {formatMoney(paymentSummary.totalCostBeforeTaxCents)}
                   </div>
 
                 </div>
 
-
-                {/* Tax */}
                 <div className="d-flex justify-content-between mb-3">
 
                   <div>
@@ -237,16 +239,13 @@ function Checkout({ cart }) {
                   </div>
 
                   <div className="fw-semibold">
-                    $4.77
+                    {formatMoney(paymentSummary.taxCents)}
                   </div>
 
                 </div>
 
 
                 <hr />
-
-
-                {/* Order Total */}
                 <div className="d-flex justify-content-between mb-4">
 
                   <div className="h5 fw-bold">
@@ -254,7 +253,7 @@ function Checkout({ cart }) {
                   </div>
 
                   <div className="h5 fw-bold text-danger">
-                    $52.51
+                    {formatMoney(paymentSummary.totalCostCents)}
                   </div>
 
                 </div>
@@ -264,6 +263,11 @@ function Checkout({ cart }) {
                 <button className="btn btn-warning w-100 py-2 fw-bold">
                   Place your order
                 </button>
+                </>
+                
+              )
+
+                }
 
               </div>
 
