@@ -24,15 +24,16 @@ function Order({cart}) {
       <div class="page-title">Your Orders</div>
 
       <div class="orders-grid">
-        {
-          orders.map((order)=>{
-             <div key={order.id} class="order-container">
+        {orders.map((order)=>{
+          return(
+            <>
+            <div key={order.id} class="order-container">
 
           <div class="order-header">
             <div class="order-header-left-section">
               <div class="order-date">
                 <div class="order-header-label">Order Placed:</div>
-                <div> {dayjs(order.orderTimeMs).format(' MMMM D')}</div>
+                <div>{dayjs( order.orderTimeMs).format('MMMM D')}</div>
               </div>
               <div class="order-total">
                 <div class="order-header-label">Total:</div>
@@ -47,24 +48,22 @@ function Order({cart}) {
           </div>
 
           <div class="order-details-grid">
-            {
-              order.products.map((orderProduct)=>{
-                return(
-                  <Fragment key={orderProduct.product.id}>
-                    <div class="product-image-container">
+            {order.products.map((orderProduct)=>{
+              return(
+                <Fragment key={orderProduct.product.id}>
+                 <div  class="product-image-container">
               <img src={orderProduct.product.image} />
             </div>
 
             <div class="product-details">
               <div class="product-name">
-                {/* {orderProduct.product.name} */}
-                Mudasir
+                {orderProduct.product.name}
               </div>
               <div class="product-delivery-date">
-                Arriving on: {dayjs(orderProduct.estimatedDeliveryTimeMs).format(' MMMM D')}
+                Arriving on: {dayjs(orderProduct.estimatedDeliveryTimeMs).format('MMMM D')}
               </div>
               <div class="product-quantity">
-                Quantity: {orderProduct.quantity }
+                {orderProduct.quantity}
               </div>
               <button class="buy-again-button button-primary">
                 <img class="buy-again-icon" src="images/icons/buy-again.png" />
@@ -79,18 +78,17 @@ function Order({cart}) {
                 </button>
               </a>
             </div>
+                </Fragment>
+              )
 
-                  </Fragment>
-
-                )
-
-              })
-            }
+            })}
           </div>
         </div>
 
-          })
-        }
+            </>
+          )
+        })}
+        
       </div>
     </div>
     </>

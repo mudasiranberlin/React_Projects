@@ -6,15 +6,16 @@ import axios from 'axios';
 import { formatMoney } from '../../utils/money';
 import ProductGrid from './ProductGrid';
 
-function Homepage({cart}) {
+function Homepage({cart, loadCart}) {
 
   const [products,setproduct] = useState([])
  
   useEffect(()=>{
-    axios.get('/api/products')
-  .then((response)=>{
+    const Homedata =async()=>{
+    const response = await axios.get('/api/products')
     setproduct(response.data)
-  })
+    } 
+    Homedata();
   },[])
 
   console.log("Card",cart);
@@ -27,7 +28,9 @@ function Homepage({cart}) {
     
     <Header cart={cart}/>
     <div className="home-page">
-      <ProductGrid products={products}/>
+      {console.log(products)
+      }
+      <ProductGrid products={products} loadCart={loadCart}/>
     </div>
     </>
   )

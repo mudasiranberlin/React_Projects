@@ -8,7 +8,7 @@ import dayjs from 'dayjs'
 import Ordersummary from './Ordersummary'
 import Paymentsummary from './Paymentsummary'
 
-function Checkout({cart}) {
+function Checkout({cart,loadCart}) {
   const [paymentSummary,setPaymentSummary]=useState(null)
   const [deliveryOptions,setDeliveryOptions]= useState([])
   useEffect(()=>{
@@ -41,7 +41,7 @@ function Checkout({cart}) {
       <div class="page-title">Review your order</div>
 
       <div class="checkout-grid">
-        <Ordersummary deliveryOptions={deliveryOptions} cart={cart}/>
+        <Ordersummary deliveryOptions={deliveryOptions} cart={cart} loadCart={loadCart}/>
         
 
 

@@ -4,7 +4,7 @@ import axios from 'axios';
 import dayjs from 'dayjs'
 import Deliveryoptions from './Deliveryoptions';
 
-function Ordersummary({deliveryOptions,cart}) {
+function Ordersummary({deliveryOptions,cart,loadCart}) {
   return (
             <div class="order-summary">
               {
@@ -43,7 +43,7 @@ function Ordersummary({deliveryOptions,cart}) {
                     </div>
                   </div>
     
-                  <Deliveryoptions deliveryOptions={deliveryOptions} cartItem={cartItem} />
+                  <Deliveryoptions deliveryOptions={deliveryOptions} cartItem={cartItem} loadCart={loadCart}/>
                 </div>
               </div>
                   )
