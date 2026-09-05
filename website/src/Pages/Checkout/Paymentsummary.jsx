@@ -1,8 +1,19 @@
 import React from 'react'
 import dayjs from 'dayjs'
 import { formatMoney } from '../../utils/money';
+import axios from 'axios';
+import { useNavigate } from 'react-router';
 
-function Paymentsummary({paymentSummary}) {
+function Paymentsummary({paymentSummary,loadCart}) {
+    const navigate = useNavigate();
+    
+    const createOrder = async ()=>{
+       await axios.post(`/api/orders`)
+       await loadCart();
+       navigate('/orders')
+    }
+
+
   return (
     <div class="payment-summary">
                 <div class="payment-summary-title">
@@ -36,7 +47,7 @@ function Paymentsummary({paymentSummary}) {
                   <div class="payment-summary-money">{formatMoney(paymentSummary.totalCostCents)}</div>
                 </div>
     
-                <button class="place-order-button button-primary">
+                <button class="place-order-button button-primary" onClick={createOrder}>
                   Place your order
                 </button>
                     </>

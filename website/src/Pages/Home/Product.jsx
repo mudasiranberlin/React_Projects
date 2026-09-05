@@ -11,7 +11,7 @@ function Product({product,loadCart}) {
                   //quantity:quantity
                   quantity
                 })
-                await loardCart();
+                await loadCart();
               }
   return (
      <div className="product-container" >

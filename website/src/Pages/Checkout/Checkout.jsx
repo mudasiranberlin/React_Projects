@@ -25,7 +25,7 @@ function Checkout({cart,loadCart}) {
       setPaymentSummary(response.data)
     })
 
-  },[])
+  },[cart])
 
   
    
@@ -45,7 +45,7 @@ function Checkout({cart,loadCart}) {
         
 
 
-        <Paymentsummary paymentSummary={paymentSummary} />
+        <Paymentsummary paymentSummary={paymentSummary} loadCart={loadCart} />
       </div>
     </div>
     </>
