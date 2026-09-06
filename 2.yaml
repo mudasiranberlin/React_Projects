@@ -1,0 +1,41 @@
+#Requests tell the Kubernetes scheduler how much CPU and memory a container needs when deciding where to place the Pod. 
+#Limits define the maximum resources the container is allowed to consume.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: resources
+spec:
+  containers:
+    - name: resource
+      image: centos
+      command:
+        - /bin/bash
+        - -c
+        - while true; do echo Technical-Guftgu; sleep 5; done
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "100m"
+        limits:
+          memory: "128Mi"
+          cpu: "200m"
+# ResourceQuota:
+# Controls the total amount of resources that can be consumed/requested by resources in a namespace.
+# LimitRange:
+# Controls the minimum, maximum, default request, or default limit for individual containers/Pods.
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: myquota
+spec:
+  hard:
+    limits.cpu: "400m"
+    limits.memory: "400Mi"
+    requests.cpu: "200m"
+    requests.memory: "200Mi"
+kubectl apply -f quota.yaml
+kubectl get resourcequota
+kubectl describe resourcequota myquota
+kubectl delete resourcequota myquota
+kubectl delete quota myquota
+kubectl delete -f quota.yaml

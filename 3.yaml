@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: deployments
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      objtype: deployment
+
+  template:
+    metadata:
+      labels:
+        objtype: deployment
+
+    spec:
+      containers:
+        - name: c00
+          image: ubuntu
+          command:
+            - /bin/bash
+            - -c
+            - while true; do echo Technical-Guftgu; sleep 5; done
+
+          resources:
+            requests:
+              cpu: "200m"
+kubectl apply -f deployment.yaml
+kubectl get deployment
+kubectl get pods
+kubectl describe deployment deployments
+Kubernetes Deployment that:
+
+Creates 3 Pods using replicas: 3.
+Runs an Ubuntu container in each Pod.
+Continuously prints Technical-Guftgu every 5 seconds.
+Requests 200m (0.2 CPU) for each Pod.
+The Deployment automatically maintains 3 running Pods if one fails.

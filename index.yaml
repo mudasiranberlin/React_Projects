@@ -1,31 +1,33 @@
-# Now lets create the screts 
-echo "root" > username.txt
-echo "mypassword123" > password.txt
-kubectl create secret generic mysecret --from-file=username.txt  --from-file=password.txt
-kubectl get secret
-kubectl describe secret mysecret
-# vi deploysecret.yaml
+# Create namespace 
+apiVersion: v1
+kind: Namespace
 
+metadata:
+  name: dev
+  labels:
+    name: dev
+kubectl apply -f namespace.yaml
+kubectl get namespaces
+kubectl get ns
+# vi pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:
-  name: myvolsecret                  # Pod name
+  name: testpod
 spec:
   containers:
-  - name: c1                         # Container name
-    image: centos:7                  # Use a valid CentOS tag
-    command: ["/bin/bash", "-c", "while true; do echo Technical-guftgu; sleep 5 ; done"]
-    volumeMounts:
-    - name: testsecret               # Refers to the volume defined below
-      mountPath: "/tmp/mysecrets"    # Secret files mounted here (read-only by default)
+    - name: c00
+      image: ubuntu
+      command:
+        - /bin/bash
+        - -c
+        - while true; do echo Technical Guftgu; sleep 5; done
 
-  volumes:
-  - name: testsecret                 # Volume name referenced above
-    secret:
-      secretName: mysecret           # Must match the Secret you created
-
-kubectl apply -f deploysecret.yaml
-kubectl exec myvolsecret -it -- /bin/bash
-cd /tmp
-ls
-cat password.txt
+  restartPolicy: Never
+kubectl config current-context
+kubectl config set-context $(kubectl config current-context) --namespace=dev #Set default namespace:
+kubectl config view | grep namespace:
+kubectl apply -f pod.yml
+kubectl get pods
+kubectl get pods -n dev
+kubectl config set-context $(kubectl config current-context) --namespace=default #To switch back to default
