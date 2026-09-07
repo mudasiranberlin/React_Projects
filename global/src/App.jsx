@@ -7,29 +7,31 @@ import Checkout from './Pages/checkout/Checkout'
 import Orders from './Pages/Orders'
 import axios from 'axios';
 import Tracking from './Pages/Tracking'
+import About from './Pages/About'
 
 
 function App() {
   
 const [cart,setCart]=useState([])
-   const loardCart = async()=>{
+   const loadCart = async()=>{
       const response = await axios.get('/api/cart-items?expand=product')
       setCart(response.data)
     }
 
    useEffect(()=>{
     
-    loardCart();
+    loadCart();
     
    },[])
 
   return (
     <>
     <Routes>
-      <Route index element={<Homepage cart={cart} loardCart={loardCart} />}/> 
-      <Route path='checkout' element={<Checkout cart={cart} loardCart={loardCart} />}/> 
-      <Route path='orders' element={<Orders cart={cart}/>} loardCart={loardCart} /> 
-      <Route path='tracking' element={<Tracking cart={cart} loardCart={loardCart} />}/> 
+      <Route index element={<Homepage cart={cart} loadCart={loadCart} />}/> 
+      <Route path='checkout' element={<Checkout cart={cart} loadCart={loadCart} />}/> 
+      <Route path='orders' element={<Orders cart={cart}/>} loadCart={loadCart} /> 
+      <Route path='tracking' element={<Tracking cart={cart} loadCart={loadCart} />}/> 
+      <Route path='about' element={<About cart={cart} loadCart={loadCart} />}/>
     </Routes>
     </>
   )

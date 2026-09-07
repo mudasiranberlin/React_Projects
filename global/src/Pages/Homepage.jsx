@@ -6,7 +6,7 @@ import Footer from '../Component/Footer'
 import axios from 'axios';
 import Product from './Product';
 
-function Homepage({cart,loardCart}) {
+function Homepage({cart,loadCart}) {
   const [products,setProducts]=useState([])
    
   useEffect(()=>{
@@ -20,7 +20,7 @@ function Homepage({cart,loardCart}) {
     <>
 
     <Header cart={cart}/>
-    <Coursel/>
+    {/* <Coursel/> */}
 <div className="container-fluid bg-light py-4">
 
   <div className="container">
@@ -29,7 +29,7 @@ function Homepage({cart,loardCart}) {
 
       {products.map((product) => (
 
-       <Product  key={product.id} product={product} loardCart={loardCart}/>
+       <Product  key={product.id} product={product} loadCart={loadCart}/>
 
       ))}
 

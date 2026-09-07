@@ -17,6 +17,7 @@ function Ordersummary({deliveryOptions,cart,loadCart}) {
                     await axios.delete(`/api/cart-items/${cartItem.productId}`)
                     await loadCart()
                     
+                    
                   }
 
 
