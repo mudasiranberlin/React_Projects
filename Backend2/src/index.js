@@ -5,6 +5,7 @@ import app from './app.js';
 
 dotenv.config({
     path: './env'
+    // path: './.env' if u get the error in dotenv write this 
 })
 connectDB()
 .then(()=>{
