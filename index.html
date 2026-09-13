@@ -1,0 +1,561 @@
+<!doctype html> <html lang="en"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Norton University</title> <!-- Bootstrap CSS --> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" > <style> /* ========================================= LOGO SECTION ========================================= */ .logo-section { background-color: white; padding: 8px 0; } .logo-container { margin-left: 5%; max-width: 230px; height: 80px; } .logo-container img { width: 100%; height: 80px; object-fit: contain; display: block; } /* White logo is hidden by default */ .logo-white { display: none !important; } /* ========================================= NAVBAR ========================================= */ .navbar { background-color: #0d6efd !important; padding: 4px 0; } /* Navbar content starts 5% from left */ .navbar .container-fluid { padding-left: 5%; padding-right: 3%; } /* ========================================= NAVIGATION LINKS ========================================= */ .navbar-nav .nav-link { color: white !important; font-size: 14px; font-weight: 500; padding: 7px 9px; margin: 0 1px; border-radius: 4px; transition: all 0.2s ease; } /* ========================================= HOVER EFFECT ========================================= */ .navbar-nav .nav-link:hover { background-color: #003b8f !important; color: white !important; } /* ========================================= ACTIVE HOME ========================================= */ .navbar-nav .nav-link.active { background-color: #003b8f; color: white !important; } /* ========================================= DROPDOWN ========================================= */ .dropdown-menu { border: none; border-radius: 4px; margin-top: 4px; padding: 5px 0; min-width: 220px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20); } /* Dropdown items */ .dropdown-item { font-size: 13px; padding: 6px 12px; transition: all 0.2s ease; } /* Dropdown hover */ .dropdown-item:hover { background-color: #003b8f; color: white; } /* ========================================= SEARCH ========================================= */ .navbar .form-control { width: 150px; height: 31px; font-size: 13px; padding: 4px 8px; } .search-btn { height: 31px; padding: 3px 10px; font-size: 13px; color: white; border: 1px solid white; background-color: transparent; } .search-btn:hover { background-color: #003b8f; border-color: #003b8f; color: white; } /* ========================================= MOBILE TOGGLE ========================================= */ .navbar-toggler { padding: 4px 7px; border: 1px solid rgba(255, 255, 255, 0.7); } .navbar-toggler-icon { width: 20px; height: 20px; filter: brightness(0) invert(1); } /* ========================================= DESKTOP DROPDOWN HOVER ========================================= */ @media (min-width: 992px) { .navbar .dropdown:hover > .dropdown-menu { display: block; } } /* ========================================= MOBILE ========================================= */ @media (max-width: 991px) { .logo-container { margin-left: 5%; max-width: 200px; height: 65px; } .logo-container img { height: 65px; } .navbar .container-fluid { padding-left: 5%; padding-right: 5%; } .navbar-nav { margin-top: 5px; } .navbar-nav .nav-link { padding: 7px 10px; } .navbar .form-control { width: 100%; margin-top: 8px; } .search-btn { margin-top: 8px; } } </style> </head> <body> <!-- ========================================= NORTON UNIVERSITY LOGO ========================================= --> <div class="logo-section"> <div class="logo-container">
+<a href="/">
+
+  <!-- Blue Logo -->
+  <img
+    src="1.jpg"
+    alt="Norton University Logo"
+    class="logo-blue"
+  >
+
+  <!-- White Logo -->
+  <img
+    src="1.png"
+    alt="Norton University Logo"
+    class="logo-white"
+  >
+
+</a>
+
+</div> </div> <!-- ========================================= NAVBAR ========================================= --> <nav class="navbar navbar-expand-lg"> <div class="container-fluid">
+<!-- MOBILE MENU BUTTON -->
+
+<button
+  class="navbar-toggler"
+  type="button"
+  data-bs-toggle="collapse"
+  data-bs-target="#navbarNav"
+  aria-controls="navbarNav"
+  aria-expanded="false"
+  aria-label="Toggle navigation"
+>
+
+  <span class="navbar-toggler-icon"></span>
+
+</button>
+
+
+<!-- NAVIGATION -->
+
+<div
+  class="collapse navbar-collapse"
+  id="navbarNav"
+>
+
+
+  <!-- =====================================
+       MAIN MENU
+  ====================================== -->
+
+  <ul class="navbar-nav me-auto">
+
+
+    <!-- HOME -->
+
+    <li class="nav-item">
+
+      <a
+        class="nav-link active"
+        href="#"
+      >
+        Home
+      </a>
+
+    </li>
+
+
+
+    <!-- =====================================
+         ABOUT US
+    ====================================== -->
+
+    <li class="nav-item dropdown">
+
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        About Us
+      </a>
+
+
+      <ul class="dropdown-menu">
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Why NU?
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Contact Us
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Campus
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Library and Facility
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Government Recognition
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Internationalization
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Mission Vision and Goal
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Structure Of NU
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Message Of Vice Rector
+          </a>
+        </li>
+
+      </ul>
+
+    </li>
+
+
+
+    <!-- =====================================
+         ACADEMICS
+    ====================================== -->
+
+    <li class="nav-item dropdown">
+
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Academics
+      </a>
+
+
+      <ul class="dropdown-menu">
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Foundation Studies Department
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            College of Sciences
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            College of Social Sciences
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            College of Arts, Humanities and Languages
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Faculty of Health Sciences
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Graduate School
+          </a>
+        </li>
+
+      </ul>
+
+    </li>
+
+
+
+    <!-- =====================================
+         ADMISSIONS
+    ====================================== -->
+
+    <li class="nav-item dropdown">
+
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Admissions
+      </a>
+
+
+      <ul class="dropdown-menu">
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Under Graduate
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Graduate School
+          </a>
+        </li>
+
+      </ul>
+
+    </li>
+
+
+
+    <!-- =====================================
+         COLLABORATIONS
+    ====================================== -->
+
+    <li class="nav-item dropdown">
+
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Collaborations
+      </a>
+
+
+      <ul class="dropdown-menu">
+
+        <li>
+          <a class="dropdown-item" href="#">
+            AUPF
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            Governing Council
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="#">
+            MOU
+          </a>
+        </li>
+
+      </ul>
+
+    </li>
+
+
+
+    <!-- =====================================
+         RESEARCH
+    ====================================== -->
+
+    <li class="nav-item">
+
+      <a
+        class="nav-link"
+        href="#"
+      >
+        Research and Publication
+      </a>
+
+    </li>
+
+
+  </ul>
+
+
+
+  <!-- =====================================
+       SEARCH
+  ====================================== -->
+
+  <form
+    class="d-flex"
+    role="search"
+  >
+
+    <input
+      class="form-control me-2"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+    >
+
+    <button
+      class="btn search-btn"
+      type="submit"
+    >
+      Search
+    </button>
+
+  </form>
+
+
+</div>
+
+</div> </nav> <!-- ========================================= BOOTSTRAP JAVASCRIPT ========================================= --> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"> </script> </body> </html>
+
+
+<div>
+
+    <!-- ========================================= FOOTER ========================================= --> <footer class="university-footer"> <div class="footer-container">
+<div class="row">
+
+
+  <!-- =====================================
+       QUICK LINKS
+  ====================================== -->
+
+  <div class="col-lg-3 col-md-6 mb-4">
+
+    <h5>Quick Links</h5>
+
+    <ul class="footer-links">
+
+      <li>
+        <a href="#">Announcement / Notice</a>
+      </li>
+
+      <li>
+        <a href="#">Student's Services</a>
+      </li>
+
+      <li>
+        <a href="#">Admissions</a>
+      </li>
+
+      <li>
+        <a href="#">Calendar</a>
+      </li>
+
+      <li>
+        <a href="#">Site Map</a>
+      </li>
+
+      <li>
+        <a href="#">Norton Blog</a>
+      </li>
+
+      <li>
+        <a href="#">Blog</a>
+      </li>
+
+      <li>
+        <a href="#">Jobs</a>
+      </li>
+
+      <li>
+        <a href="#">Scholarship</a>
+      </li>
+
+      <li>
+        <a href="#">Contact Us</a>
+      </li>
+
+    </ul>
+
+  </div>
+
+
+
+  <!-- =====================================
+       ACADEMICS
+  ====================================== -->
+
+  <div class="col-lg-3 col-md-6 mb-4">
+
+    <h5>Academics</h5>
+
+    <ul class="footer-links">
+
+      <li>
+        <a href="#">
+          Foundation Studies Department
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          College Of Social Sciences
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          College Of Sciences
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          College Of Arts, Humanities And Languages
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          Faculty Of Health Sciences
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          Graduate School
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          Others
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+
+
+  <!-- =====================================
+       GENERAL INFORMATION
+  ====================================== -->
+
+  <div class="col-lg-3 col-md-6 mb-4">
+
+    <h5>General Information</h5>
+
+    <div class="footer-contact">
+
+      <p>
+        <strong>Tel:</strong>
+        023 432 075
+      </p>
+
+      <p>
+        <strong>Mobile:</strong>
+        093 888 569 / 093 888 359
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:info@norton-u.com">
+          info@norton-u.com
+        </a>
+      </p>
+
+    </div>
+
+
+    <h5 class="mt-4">
+      Graduate School
+    </h5>
+
+    <div class="footer-contact">
+
+      <p>
+        <strong>Mobile:</strong>
+        010 980 527 (Telegram)
+      </p>
+
+      <p>
+        <strong>Tel:</strong>
+        023 982 177, Ext. 106
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================
+       ADMIN AND PERSONNEL
+  ====================================== -->
+
+  <div class="col-lg-3 col-md-6 mb-4">
+
+    <h5>Admin and Personnel</h5>
+
+    <div class="footer-contact">
+
+      <p>
+        <strong>Mobile:</strong>
+        070 231 331
+      </p>
+
+      <p>
+        <strong>E-mail:</strong>
+        <a href="mailto:admin@norton-u.com">
+          admin@norton-u.com
+        </a>
+      </p>
+
+      <p>
+        <strong>Address:</strong><br>
+        St. Keo Chenda, Sangkat Chroy Changvar,
+        Khan Chroy Changvar, Phnom Penh, Cambodia.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================
+     COPYRIGHT
+====================================== -->
+
+<div class="footer-bottom">
+
+  <p>
+    Copyright © Norton University, 1996-2026
+  </p>
+
+</div>
+
+</div> </footer> <style> /* ========================================= FOOTER ========================================= */ .university-footer { background-color: #003b8f; color: white; margin-top: 50px; padding-top: 40px; } /* Footer container */ .footer-container { width: 90%; margin: auto; } /* ========================================= FOOTER HEADINGS ========================================= */ .university-footer h5 { color: white; font-size: 17px; font-weight: 600; margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid rgba(255, 255, 255, 0.3); display: inline-block; } /* ========================================= FOOTER LINKS ========================================= */ .footer-links { list-style: none; padding: 0; margin: 0; } .footer-links li { margin-bottom: 7px; } .footer-links a { color: #e8f1ff; text-decoration: none; font-size: 13px; transition: all 0.2s ease; } /* Link hover */ .footer-links a:hover { color: white; padding-left: 5px; } /* ========================================= CONTACT INFORMATION ========================================= */ .footer-contact p { color: #e8f1ff; font-size: 13px; line-height: 1.6; margin-bottom: 8px; } .footer-contact strong { color: white; } .footer-contact a { color: #e8f1ff; text-decoration: none; } .footer-contact a:hover { color: white; text-decoration: underline; } /* ========================================= COPYRIGHT ========================================= */ .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.2); margin-top: 15px; padding: 18px 0; text-align: center; } .footer-bottom p { color: #dce9ff; font-size: 12px; margin: 0; } /* ========================================= MOBILE ========================================= */ @media (max-width: 767px) { .university-footer { padding-top: 30px; } .footer-container { width: 90%; } .university-footer h5 { font-size: 16px; } .footer-links a, .footer-contact p { font-size: 13px; } } </style>
+
+
+</div>
