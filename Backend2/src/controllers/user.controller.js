@@ -4,6 +4,22 @@ import {ApiResponse} from "../utils/ApiResponse.js"
 import {User} from "../models/user.model.js"
 import {UploadOnCloudinary} from "../utils/cloudinary.js"
 
+
+const generateAccessAndRefreshToken = async(userId) => {
+    try {
+        const user = await User.findById(userId)
+        const accessToken = user.generateAccessToken()
+        const refreshToken = user.generateRefreshToken()
+        user.refreshToken=refreshToken
+        user.save({validateBeforeSave:false})
+
+        return {accessToken,refreshToken}
+        
+    } catch (error) {
+        throw new ApiError(500,"Something went wrong Generating the access and refresh token ")
+    }
+}
+
 const registerUser = asyncHandler(async (req,res) => {
     const {username,password,fullName,email} = req.body
     if ([fullName,email,password,username].some((feild)=>{feild?.trim() ===""})) {
