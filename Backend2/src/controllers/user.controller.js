@@ -24,8 +24,6 @@ const registerUser = asyncHandler(async (req,res) => {
         coverImageLocalPath = req.files.coverImage[0].path
         
     }
-
-
     if (!avatarLocalPath) {
          throw new ApiError(400,"Avatar file is Required")
     }
@@ -57,7 +55,35 @@ const registerUser = asyncHandler(async (req,res) => {
     )
 })
 
+const loginUser = asyncHandler(async(req,res)=>{
+    const {email,username,password} = req.body
+    if (!username || !email) {
+        throw new ApiError(400,"Please enter the Username and email")
+        
+    }
+    const user = await User.findOne({
+        $or:[{username},{password}]
+    })
+    if (!user) {
+        throw new ApiError(404,"User does not exist")
+    }
+    if (!password) {
+        throw new ApiError(400,"Please enter the Password")
+    }
+
+    const isPasswordValid = await user.isPasswordCorrect(password)
+
+    if (!isPasswordValid) {
+        throw new ApiError(401,"Password incorrect")
+    }
+
+})
 
 
 
-export {registerUser}
+
+export {
+    registerUser,
+    loginUser
+
+}
