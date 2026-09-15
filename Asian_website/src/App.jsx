@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import Headers from './Pages/Header/Header';
-
+import Footer from './Pages/Footer/Footer';
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
     <Headers/>
+    <Footer/>
 
 
     </>
