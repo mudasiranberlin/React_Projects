@@ -23,8 +23,8 @@ function Header() {
         <div className="container top-bar-inner">
 
           <div className="top-contact">
-            <span>📞 +855 12 345 678</span>
-            <span>✉ info@aic.edu.kh</span>
+            <span>📞 +855 99 888 707</span>
+            <span>✉ sopheap4anha@gmail.com</span>
           </div>
 
           <div className="top-links">
@@ -106,45 +106,72 @@ function Header() {
                   toggleDropdown("about")
                 }
               >
-                About
+                About us
                 <span>⌄</span>
               </button>
 
               <div className="dropdown-menu">
 
                 <a
+                  href="#whyaic"
+                  onClick={closeMenu}
+                >
+                  Why AIC
+                </a>
+
+                <a
+                  href="#contact"
+                  onClick={closeMenu}
+                >
+                  Contact us
+                </a>
+                <a
                   href="#about"
                   onClick={closeMenu}
                 >
-                  About AIC
+                  Campus
+                </a>
+
+                <a
+                  href="#about"
+                  onClick={closeMenu}
+                >
+                  Library and Facility
+                </a>
+
+                <a
+                  href="#about"
+                  onClick={closeMenu}
+                >
+                  Government Recognition
                 </a>
 
                 <a
                   href="#history"
                   onClick={closeMenu}
                 >
-                  History
+                  Internationalization
                 </a>
 
                 <a
                   href="#mission"
                   onClick={closeMenu}
                 >
-                  Mission & Vision
+                  Mission Vision and Goal
                 </a>
 
                 <a
                   href="#leadership"
                   onClick={closeMenu}
                 >
-                  Leadership
+                  Structure Of AIC
                 </a>
 
                 <a
                   href="#organization"
                   onClick={closeMenu}
                 >
-                  Organization
+                  Message Of Vice Reactor
                 </a>
 
               </div>
@@ -174,37 +201,42 @@ function Header() {
                   href="#faculties"
                   onClick={closeMenu}
                 >
-                  Faculties
+                  Foundation Studies Department
                 </a>
 
                 <a
                   href="#programs"
                   onClick={closeMenu}
                 >
-                  Academic Programs
+                  College of Sciences
                 </a>
 
                 <a
                   href="#undergraduate"
                   onClick={closeMenu}
                 >
-                  Undergraduate
+                  College of Social Sciences
                 </a>
 
                 <a
                   href="#graduate"
                   onClick={closeMenu}
                 >
-                  Graduate Programs
+                  College of Arts, Humanities and Languages
                 </a>
 
                 <a
                   href="#calendar"
                   onClick={closeMenu}
                 >
-                  Academic Calendar
+                  Faculty of Health Sciences
                 </a>
-
+                <a
+                  href="#calendar"
+                  onClick={closeMenu}
+                >
+                  Graduate School
+                </a>
               </div>
             </div>
 
@@ -227,6 +259,20 @@ function Header() {
               </button>
 
               <div className="dropdown-menu">
+
+                <a
+                  href="#requirements"
+                  onClick={closeMenu}
+                >
+                  Under Graduate
+                </a>
+
+                <a
+                  href="#requirements"
+                  onClick={closeMenu}
+                >
+                  Graduate school
+                </a>
 
                 <a
                   href="#requirements"
@@ -338,6 +384,50 @@ function Header() {
                   toggleDropdown("campus")
                 }
               >
+                Collaborations
+                <span>⌄</span>
+              </button>
+
+              <div className="dropdown-menu">
+
+                <a
+                  href="#events"
+                  onClick={closeMenu}
+                >
+                  AUPF
+                </a>
+
+                <a
+                  href="#activities"
+                  onClick={closeMenu}
+                >
+                  Governing Council
+                </a>
+
+                <a
+                  href="#facilities"
+                  onClick={closeMenu}
+                >
+                  MOU
+                </a>
+
+              </div>
+            </div>
+
+            {/* CAMPUS */}
+            <div
+              className={`nav-dropdown ${
+                openDropdown === "campus"
+                  ? "active"
+                  : ""
+              }`}
+            >
+              <button
+                className="dropdown-button"
+                onClick={() =>
+                  toggleDropdown("campus")
+                }
+              >
                 Campus Life
                 <span>⌄</span>
               </button>
@@ -382,13 +472,13 @@ function Header() {
               </div>
             </div>
 
-            {/* CONTACT */}
+            {/* {CONTACT }
             <a
               href="#contact"
               onClick={closeMenu}
             >
-              Contact
-            </a>
+              Collaborations
+            </a> */}
 
             {/* APPLY */}
             <a
