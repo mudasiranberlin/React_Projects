@@ -1,0 +1,305 @@
+/* =========================================================
+   ABOUT LAYOUT
+========================================================= */
+
+.about-layout {
+  min-height: 100vh;
+  width: 100%;
+}
+
+
+/* =========================================================
+   LEFT SIDEBAR
+========================================================= */
+
+.about-sidebar {
+  position: fixed;
+
+  left: 20px;
+  top: 140px;
+
+  width: 280px;
+
+  max-height: calc(100vh - 160px);
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+
+  overflow-y: auto;
+
+  z-index: 100;
+
+  scrollbar-width: thin;
+}
+
+
+/* =========================================================
+   SIDEBAR HEADER
+========================================================= */
+
+.about-sidebar-header {
+  padding: 22px 22px 18px;
+
+  border-bottom: 1px solid #eeeeee;
+
+  background: #f8fafc;
+}
+
+.about-sidebar-header span {
+  display: block;
+
+  color: #b8860b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 5px;
+}
+
+.about-sidebar-header h2 {
+  margin: 0;
+
+  color: #123c69;
+
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+.about-sidebar-nav {
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 10px;
+}
+
+
+/* =========================================================
+   SIDEBAR LINK
+========================================================= */
+
+.about-sidebar-link {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+
+  padding: 13px 12px;
+
+  margin-bottom: 3px;
+
+  color: #374151;
+
+  text-decoration: none;
+
+  border-radius: 9px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* ICON */
+
+.about-sidebar-icon {
+  width: 28px;
+
+  min-width: 28px;
+
+  text-align: center;
+
+  font-size: 18px;
+}
+
+
+/* TITLE */
+
+.about-sidebar-title {
+  flex: 1;
+
+  font-size: 14px;
+
+  line-height: 1.35;
+
+  font-weight: 500;
+}
+
+
+/* ARROW */
+
+.about-sidebar-arrow {
+  opacity: 0;
+
+  color: #b8860b;
+
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* HOVER */
+
+.about-sidebar-link:hover {
+  background: #f1f5f9;
+
+  color: #123c69;
+}
+
+.about-sidebar-link:hover
+.about-sidebar-arrow {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* ACTIVE */
+
+.about-sidebar-link.active {
+  background: #123c69;
+
+  color: #ffffff;
+}
+
+.about-sidebar-link.active
+.about-sidebar-arrow {
+  opacity: 1;
+
+  color: #f4c542;
+
+  transform: translateX(0);
+}
+
+.about-sidebar-link.active
+.about-sidebar-icon {
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+
+.about-page-content {
+
+  /*
+    This creates space for the sidebar.
+    Therefore the sidebar never covers your content.
+  */
+
+  margin-left: 320px;
+
+  width: calc(100% - 320px);
+
+  min-height: 100vh;
+
+  padding-right: 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .about-sidebar {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    width: calc(100% - 30px);
+
+    max-height: none;
+
+    margin: 20px auto;
+
+    border-radius: 12px;
+  }
+
+
+  .about-sidebar-nav {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 5px;
+  }
+
+
+  .about-sidebar-link {
+    margin: 0;
+  }
+
+
+  .about-page-content {
+
+    margin-left: 0;
+
+    width: 100%;
+
+    padding: 0 15px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .about-sidebar {
+    width: calc(100% - 20px);
+
+    margin: 10px auto;
+  }
+
+
+  .about-sidebar-nav {
+    grid-template-columns: 1fr;
+  }
+
+
+  .about-sidebar-header {
+    padding: 18px;
+  }
+
+
+  .about-sidebar-header h2 {
+    font-size: 19px;
+  }
+
+
+  .about-sidebar-link {
+    padding: 11px;
+  }
+
+}

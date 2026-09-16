@@ -1,13 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
 
   const toggleDropdown = (name) => {
-    setOpenDropdown(
-      openDropdown === name ? null : name
-    );
+    setOpenDropdown(openDropdown === name ? null : name);
   };
 
   const closeMenu = () => {
@@ -28,17 +27,17 @@ function Header() {
           </div>
 
           <div className="top-links">
-            <a href="#student-login">
+            <Link to="/student-login" onClick={closeMenu}>
               Student Login
-            </a>
+            </Link>
 
-            <a href="#staff-login">
+            <Link to="/staff-login" onClick={closeMenu}>
               Staff Login
-            </a>
+            </Link>
 
-            <a href="#library">
+            <Link to="/library" onClick={closeMenu}>
               Library
-            </a>
+            </Link>
           </div>
 
         </div>
@@ -49,13 +48,13 @@ function Header() {
         <div className="container nav-inner">
 
           {/* LOGO */}
-          <a
-            href="#home"
+          <Link
+            to="/"
             className="logo"
             onClick={closeMenu}
           >
             <img
-              src="./public/images/1.jpg"
+              src="/images/1.jpg"
               alt="ASEAN Institute of Cambodia"
               className="logo-image"
             />
@@ -64,7 +63,7 @@ function Header() {
               ASEAN INSTITUTE
               <small>OF CAMBODIA</small>
             </span>
-          </a>
+          </Link>
 
           {/* MOBILE BUTTON */}
           <button
@@ -76,103 +75,85 @@ function Header() {
           </button>
 
           {/* MENU */}
-          <nav
-            className={
-              menuOpen
-                ? "nav-menu open"
-                : "nav-menu"
-            }
-          >
+          <nav className={menuOpen ? "nav-menu open" : "nav-menu"}>
 
             {/* HOME */}
-            <a
-              href="#home"
+            <Link
+              to="/"
               onClick={closeMenu}
             >
               Home
-            </a>
+            </Link>
 
             {/* ABOUT */}
             <div
               className={`nav-dropdown ${
-                openDropdown === "about"
-                  ? "active"
-                  : ""
+                openDropdown === "about" ? "active" : ""
               }`}
             >
               <button
                 className="dropdown-button"
-                onClick={() =>
-                  toggleDropdown("about")
-                }
+                onClick={() => toggleDropdown("about")}
               >
-                About us
+                
+                <Link
+              to="/about"
+              onClick={closeMenu}
+            >
+              About us
+            </Link>
                 <span>⌄</span>
               </button>
 
               <div className="dropdown-menu">
 
-                <a
-                  href="#whyaic"
-                  onClick={closeMenu}
-                >
+                <Link to="/about/why-aic" onClick={closeMenu}>
                   Why AIC
-                </a>
+                </Link>
 
-                <a
-                  href="#contact"
-                  onClick={closeMenu}
-                >
+                <Link to="/about/contact" onClick={closeMenu}>
                   Contact us
-                </a>
-                <a
-                  href="#about"
-                  onClick={closeMenu}
-                >
+                </Link>
+
+                <Link to="/about/campus" onClick={closeMenu}>
                   Campus
-                </a>
+                </Link>
 
-                <a
-                  href="#about"
-                  onClick={closeMenu}
-                >
+                <Link to="/about/library" onClick={closeMenu}>
                   Library and Facility
-                </a>
+                </Link>
 
-                <a
-                  href="#about"
-                  onClick={closeMenu}
-                >
+                <Link to="/about/recognition" onClick={closeMenu}>
                   Government Recognition
-                </a>
+                </Link>
 
-                <a
-                  href="#history"
+                <Link
+                  to="/about/internationalization"
                   onClick={closeMenu}
                 >
                   Internationalization
-                </a>
+                </Link>
 
-                <a
-                  href="#mission"
+                <Link
+                  to="/about/mission"
                   onClick={closeMenu}
                 >
                   Mission Vision and Goal
-                </a>
+                </Link>
 
-                <a
-                  href="#leadership"
+                <Link
+                  to="/about/structure"
                   onClick={closeMenu}
                 >
                   Structure Of AIC
-                </a>
+                </Link>
 
-                <a
-                  href="#organization"
+                <Link
+                  to="/about/vice-rector"
                   onClick={closeMenu}
                 >
-                  Message Of Vice Reactor
-                </a>
+                  Message Of Vice Rector
+                </Link>
 
               </div>
             </div>
@@ -180,16 +161,12 @@ function Header() {
             {/* ACADEMICS */}
             <div
               className={`nav-dropdown ${
-                openDropdown === "academics"
-                  ? "active"
-                  : ""
+                openDropdown === "academics" ? "active" : ""
               }`}
             >
               <button
                 className="dropdown-button"
-                onClick={() =>
-                  toggleDropdown("academics")
-                }
+                onClick={() => toggleDropdown("academics")}
               >
                 Academics
                 <span>⌄</span>
@@ -197,62 +174,42 @@ function Header() {
 
               <div className="dropdown-menu">
 
-                <a
-                  href="#faculties"
-                  onClick={closeMenu}
-                >
+                <Link to="/academics/foundation" onClick={closeMenu}>
                   Foundation Studies Department
-                </a>
+                </Link>
 
-                <a
-                  href="#programs"
-                  onClick={closeMenu}
-                >
+                <Link to="/academics/sciences" onClick={closeMenu}>
                   College of Sciences
-                </a>
+                </Link>
 
-                <a
-                  href="#undergraduate"
-                  onClick={closeMenu}
-                >
+                <Link to="/academics/social-sciences" onClick={closeMenu}>
                   College of Social Sciences
-                </a>
+                </Link>
 
-                <a
-                  href="#graduate"
-                  onClick={closeMenu}
-                >
+                <Link to="/academics/arts" onClick={closeMenu}>
                   College of Arts, Humanities and Languages
-                </a>
+                </Link>
 
-                <a
-                  href="#calendar"
-                  onClick={closeMenu}
-                >
+                <Link to="/academics/health" onClick={closeMenu}>
                   Faculty of Health Sciences
-                </a>
-                <a
-                  href="#calendar"
-                  onClick={closeMenu}
-                >
+                </Link>
+
+                <Link to="/academics/graduate" onClick={closeMenu}>
                   Graduate School
-                </a>
+                </Link>
+
               </div>
             </div>
 
             {/* ADMISSIONS */}
             <div
               className={`nav-dropdown ${
-                openDropdown === "admissions"
-                  ? "active"
-                  : ""
+                openDropdown === "admissions" ? "active" : ""
               }`}
             >
               <button
                 className="dropdown-button"
-                onClick={() =>
-                  toggleDropdown("admissions")
-                }
+                onClick={() => toggleDropdown("admissions")}
               >
                 Admissions
                 <span>⌄</span>
@@ -260,54 +217,33 @@ function Header() {
 
               <div className="dropdown-menu">
 
-                <a
-                  href="#requirements"
-                  onClick={closeMenu}
-                >
+                <Link to="/admissions/undergraduate" onClick={closeMenu}>
                   Under Graduate
-                </a>
+                </Link>
 
-                <a
-                  href="#requirements"
-                  onClick={closeMenu}
-                >
-                  Graduate school
-                </a>
+                <Link to="/admissions/graduate" onClick={closeMenu}>
+                  Graduate School
+                </Link>
 
-                <a
-                  href="#requirements"
-                  onClick={closeMenu}
-                >
+                <Link to="/admissions/requirements" onClick={closeMenu}>
                   Admission Requirements
-                </a>
+                </Link>
 
-                <a
-                  href="#how-to-apply"
-                  onClick={closeMenu}
-                >
+                <Link to="/admissions/how-to-apply" onClick={closeMenu}>
                   How to Apply
-                </a>
+                </Link>
 
-                <a
-                  href="#tuition"
-                  onClick={closeMenu}
-                >
+                <Link to="/admissions/tuition" onClick={closeMenu}>
                   Tuition & Fees
-                </a>
+                </Link>
 
-                <a
-                  href="#scholarships"
-                  onClick={closeMenu}
-                >
+                <Link to="/admissions/scholarships" onClick={closeMenu}>
                   Scholarships
-                </a>
+                </Link>
 
-                <a
-                  href="#application"
-                  onClick={closeMenu}
-                >
+                <Link to="/admissions/application" onClick={closeMenu}>
                   Online Application
-                </a>
+                </Link>
 
               </div>
             </div>
@@ -315,16 +251,12 @@ function Header() {
             {/* STUDENTS */}
             <div
               className={`nav-dropdown ${
-                openDropdown === "students"
-                  ? "active"
-                  : ""
+                openDropdown === "students" ? "active" : ""
               }`}
             >
               <button
                 className="dropdown-button"
-                onClick={() =>
-                  toggleDropdown("students")
-                }
+                onClick={() => toggleDropdown("students")}
               >
                 Students
                 <span>⌄</span>
@@ -332,57 +264,38 @@ function Header() {
 
               <div className="dropdown-menu">
 
-                <a
-                  href="#student-portal"
-                  onClick={closeMenu}
-                >
+                <Link to="/students/portal" onClick={closeMenu}>
                   Student Portal
-                </a>
+                </Link>
 
-                <a
-                  href="#student-services"
-                  onClick={closeMenu}
-                >
+                <Link to="/students/services" onClick={closeMenu}>
                   Student Services
-                </a>
+                </Link>
 
-                <a
-                  href="#library"
-                  onClick={closeMenu}
-                >
+                <Link to="/students/library" onClick={closeMenu}>
                   Library
-                </a>
+                </Link>
 
-                <a
-                  href="#clubs"
-                  onClick={closeMenu}
-                >
+                <Link to="/students/clubs" onClick={closeMenu}>
                   Clubs & Activities
-                </a>
+                </Link>
 
-                <a
-                  href="#career"
-                  onClick={closeMenu}
-                >
+                <Link to="/students/career" onClick={closeMenu}>
                   Career Center
-                </a>
+                </Link>
 
               </div>
             </div>
 
-            {/* CAMPUS */}
+            {/* COLLABORATIONS */}
             <div
               className={`nav-dropdown ${
-                openDropdown === "campus"
-                  ? "active"
-                  : ""
+                openDropdown === "collaborations" ? "active" : ""
               }`}
             >
               <button
                 className="dropdown-button"
-                onClick={() =>
-                  toggleDropdown("campus")
-                }
+                onClick={() => toggleDropdown("collaborations")}
               >
                 Collaborations
                 <span>⌄</span>
@@ -390,43 +303,33 @@ function Header() {
 
               <div className="dropdown-menu">
 
-                <a
-                  href="#events"
-                  onClick={closeMenu}
-                >
+                <Link to="/collaborations/aupf" onClick={closeMenu}>
                   AUPF
-                </a>
+                </Link>
 
-                <a
-                  href="#activities"
+                <Link
+                  to="/collaborations/governing-council"
                   onClick={closeMenu}
                 >
                   Governing Council
-                </a>
+                </Link>
 
-                <a
-                  href="#facilities"
-                  onClick={closeMenu}
-                >
+                <Link to="/collaborations/mou" onClick={closeMenu}>
                   MOU
-                </a>
+                </Link>
 
               </div>
             </div>
 
-            {/* CAMPUS */}
+            {/* CAMPUS LIFE */}
             <div
               className={`nav-dropdown ${
-                openDropdown === "campus"
-                  ? "active"
-                  : ""
+                openDropdown === "campusLife" ? "active" : ""
               }`}
             >
               <button
                 className="dropdown-button"
-                onClick={() =>
-                  toggleDropdown("campus")
-                }
+                onClick={() => toggleDropdown("campusLife")}
               >
                 Campus Life
                 <span>⌄</span>
@@ -434,60 +337,37 @@ function Header() {
 
               <div className="dropdown-menu">
 
-                <a
-                  href="#events"
-                  onClick={closeMenu}
-                >
+                <Link to="/campus-life/events" onClick={closeMenu}>
                   Events
-                </a>
+                </Link>
 
-                <a
-                  href="#activities"
-                  onClick={closeMenu}
-                >
+                <Link to="/campus-life/activities" onClick={closeMenu}>
                   Activities
-                </a>
+                </Link>
 
-                <a
-                  href="#facilities"
-                  onClick={closeMenu}
-                >
+                <Link to="/campus-life/facilities" onClick={closeMenu}>
                   Facilities
-                </a>
+                </Link>
 
-                <a
-                  href="#gallery"
-                  onClick={closeMenu}
-                >
+                <Link to="/campus-life/gallery" onClick={closeMenu}>
                   Gallery
-                </a>
+                </Link>
 
-                <a
-                  href="#news"
-                  onClick={closeMenu}
-                >
+                <Link to="/campus-life/news" onClick={closeMenu}>
                   News
-                </a>
+                </Link>
 
               </div>
             </div>
 
-            {/* {CONTACT }
-            <a
-              href="#contact"
-              onClick={closeMenu}
-            >
-              Collaborations
-            </a> */}
-
             {/* APPLY */}
-            <a
-              href="#apply"
+            <Link
+              to="/apply"
               className="nav-apply"
               onClick={closeMenu}
             >
               Apply Now
-            </a>
+            </Link>
 
           </nav>
         </div>
@@ -496,4 +376,4 @@ function Header() {
   );
 }
 
-export default Header
+export default Header;

@@ -1,7 +1,6 @@
-function MessageOfViceRector({PageHero}) {
+function MessageOfViceRector({ PageHero }) {
   return (
     <main className="university-page">
-
       <PageHero
         label="LEADERSHIP MESSAGE"
         title="Message Of Vice Rector"
@@ -9,25 +8,16 @@ function MessageOfViceRector({PageHero}) {
       />
 
       <section className="info-section vice-rector-section">
-
         <div className="container">
-
           <div className="vice-message-layout">
-
             <div className="vice-photo">
-
               <div className="vice-photo-placeholder">
                 <span>👤</span>
-
-                <p>
-                  Vice Rector
-                </p>
+                <p>Vice Rector</p>
               </div>
-
             </div>
 
             <div className="vice-message">
-
               <span className="section-label">
                 MESSAGE FROM THE VICE RECTOR
               </span>
@@ -103,48 +93,30 @@ function MessageOfViceRector({PageHero}) {
               </p>
 
               <div className="vice-signature">
-
-                <strong>
-                  Vice Rector
-                </strong>
-
-                <span>
-                  Asian Institute of Cambodia
-                </span>
-
+                <strong>Vice Rector</strong>
+                <span>Asian Institute of Cambodia</span>
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
 
       <section className="blue-highlight">
-
         <div className="container highlight-content">
-
           <span className="section-label light">
             OUR SHARED FUTURE
           </span>
 
-          <h2>
-            One Community, One Destiny
-          </h2>
+          <h2>One Community, One Destiny</h2>
 
           <p>
             Working together to develop good human resources
             in a global family.
           </p>
-
         </div>
-
       </section>
-
     </main>
   );
 }
 
-export default MessageOfViceRector
+export default MessageOfViceRector;

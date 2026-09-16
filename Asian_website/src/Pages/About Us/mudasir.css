@@ -1,0 +1,369 @@
+.university-page {
+  background: #fff;
+  color: #333;
+  overflow: hidden;
+}
+
+.university-page .container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* HERO */
+
+.reactor-hero {
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #fff;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 27, 104, 0.98),
+      rgba(7, 31, 112, 0.84),
+      rgba(237, 28, 36, 0.45)
+    ),
+    url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=85")
+      center / cover no-repeat;
+}
+
+.reactor-hero-overlay {
+  width: 100%;
+}
+
+.reactor-hero-label {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  color: #f4c400;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.reactor-hero h1 {
+  margin: 0 0 20px;
+
+  color: #fff;
+  font-size: 62px;
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.reactor-hero p {
+  max-width: 750px;
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* BREADCRUMB */
+
+.reactor-breadcrumb {
+  padding: 17px 0;
+  background: #f5f6f9;
+  font-size: 14px;
+}
+
+.reactor-breadcrumb a {
+  color: #071f70;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.reactor-breadcrumb span {
+  margin: 0 10px;
+  color: #aaa;
+}
+
+.reactor-breadcrumb strong {
+  color: #ed1c24;
+}
+
+/* GENERAL */
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 12px;
+
+  color: #ed1c24;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0 0 17px;
+
+  color: #071f70;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.section-heading h2 span {
+  color: #ed1c24;
+}
+
+.section-heading p {
+  margin: 0;
+
+  color: #666;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* INTRODUCTION */
+
+.about-introduction {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.about-introduction-content {
+  max-width: 850px;
+}
+
+.about-introduction-content h2 {
+  margin: 0 0 25px;
+
+  color: #071f70;
+  font-size: 45px;
+  line-height: 1.15;
+}
+
+.about-introduction-content h2 span {
+  color: #ed1c24;
+}
+
+.about-introduction-content p {
+  margin: 0 0 15px;
+
+  color: #555;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ABOUT OVERVIEW */
+
+.about-overview {
+  padding: 90px 0;
+  background: #f7f8fb;
+}
+
+/* SECTION CARDS */
+
+.about-section-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.about-section-card {
+  width: 100%;
+  padding: 28px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  border: none;
+  border-bottom: 4px solid transparent;
+
+  background: #fff;
+
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.about-section-card:hover {
+  transform: translateY(-6px);
+
+  border-bottom-color: #ed1c24;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.09);
+}
+
+.about-section-icon {
+  min-width: 55px;
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #071f70;
+  border-radius: 5px;
+
+  font-size: 25px;
+}
+
+.about-section-card-content {
+  min-width: 0;
+}
+
+.about-section-card h3 {
+  margin: 0 0 9px;
+
+  color: #071f70;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.about-section-card p {
+  margin: 0 0 12px;
+
+  color: #777;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.about-section-card span {
+  color: #ed1c24;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+  .reactor-hero {
+    min-height: 390px;
+  }
+
+  .reactor-hero h1 {
+    font-size: 52px;
+  }
+
+  .about-section-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .university-page .container {
+    width: min(100% - 30px, 700px);
+  }
+
+  .reactor-hero {
+    min-height: 350px;
+  }
+
+  .reactor-hero h1 {
+    font-size: 44px;
+  }
+
+  .reactor-hero p {
+    font-size: 16px;
+  }
+
+  .about-introduction,
+  .about-overview {
+    padding: 70px 0;
+  }
+
+  .about-section-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .university-page .container {
+    width: calc(100% - 30px);
+  }
+
+  .reactor-hero {
+    min-height: 310px;
+  }
+
+  .reactor-hero h1 {
+    font-size: 37px;
+  }
+
+  .reactor-hero-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .reactor-hero p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .reactor-breadcrumb {
+    font-size: 13px;
+  }
+
+  .about-introduction,
+  .about-overview {
+    padding: 55px 0;
+  }
+
+  .about-introduction-content h2,
+  .section-heading h2 {
+    font-size: 34px;
+  }
+
+  .about-section-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section-card {
+    padding: 22px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 400px) {
+  .reactor-hero h1 {
+    font-size: 32px;
+  }
+
+  .reactor-hero p {
+    font-size: 13px;
+  }
+
+  .about-section-card {
+    gap: 13px;
+    padding: 18px;
+  }
+
+  .about-section-icon {
+    min-width: 48px;
+    width: 48px;
+    height: 48px;
+    font-size: 21px;
+  }
+
+  .about-section-card h3 {
+    font-size: 16px;
+  }
+
+  .about-section-card p {
+    font-size: 12px;
+  }
+}
+
+

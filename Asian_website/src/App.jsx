@@ -26,6 +26,7 @@ import StudentServices from './Pages/StudentServices/StudentServices';
 
  import NUCalendar2023 from './Pages/Calendar/NUCalendar2023'
  import { Route, Routes } from 'react-router'
+ import AboutRoutes from './Pages/About Us/AboutRoutes.jsx';
 
  
 
@@ -42,7 +43,7 @@ function App() {
   <Route path="/collaborations/aupf" element={<AUPFPage />} />
 </Routes> */}
     <Headers/>
-      <main>
+      {/* <main>
         <Hero/>
         <Stats/>
         <About/>
@@ -75,11 +76,16 @@ function App() {
        <Publication/>
        <AcademicPrograms/>
        <StudentServices/>
-       <NUCalendar2023/>
+       <NUCalendar2023/> */}
       
 
-      
-    
+<h1>Start Routing</h1> 
+    <Routes>
+      {/* other routes */}
+
+      <Route path="/about/*" element={<AboutRoutes />} />
+    </Routes>
+
 
 
     </>

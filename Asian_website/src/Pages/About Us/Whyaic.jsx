@@ -1,16 +1,14 @@
-function WhyNU({PageHero}) {
+function WhyAIC({ PageHero }) {
   return (
     <main className="university-page">
-
       <PageHero
         label="ABOUT OUR INSTITUTION"
-        title="Why NU?"
+        title="Why AIC?"
         description="Discover the values, opportunities and educational environment that make our institution a place to learn, grow and succeed."
       />
 
       <section className="info-section">
         <div className="container">
-
           <div className="section-heading-left">
             <span className="section-label">
               WHY CHOOSE US
@@ -18,7 +16,7 @@ function WhyNU({PageHero}) {
 
             <h2>
               Why Study at
-              <span> NU?</span>
+              <span> AIC?</span>
             </h2>
 
             <p>
@@ -31,7 +29,6 @@ function WhyNU({PageHero}) {
           </div>
 
           <div className="why-grid">
-
             <div className="why-card">
               <div className="why-icon">🎓</div>
               <h3>Quality Education</h3>
@@ -91,7 +88,6 @@ function WhyNU({PageHero}) {
                 future careers.
               </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -102,9 +98,7 @@ function WhyNU({PageHero}) {
             YOUR FUTURE STARTS HERE
           </span>
 
-          <h2>
-            Learn. Grow. Lead.
-          </h2>
+          <h2>Learn. Grow. Lead.</h2>
 
           <p>
             Our goal is to help every student discover their
@@ -117,9 +111,8 @@ function WhyNU({PageHero}) {
           </a>
         </div>
       </section>
-
     </main>
   );
 }
 
-export default WhyNU
+export default WhyAIC;
