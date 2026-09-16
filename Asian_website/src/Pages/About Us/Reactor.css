@@ -3,22 +3,31 @@
 ========================================================= */
 
 .university-page {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
   background: #fff;
   color: #333;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
+  box-sizing: border-box;
 }
 
+.university-page *,
+.university-page *::before,
+.university-page *::after {
+  box-sizing: border-box;
+}
 
 /* =========================================================
    HERO
 ========================================================= */
 
 .university-page-hero {
+  width: 100%;
   min-height: 410px;
-
   display: flex;
   align-items: center;
-
   background:
     linear-gradient(
       90deg,
@@ -28,57 +37,48 @@
     ),
     url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=85")
     center/cover no-repeat;
-
   color: white;
+  overflow: hidden;
 }
 
 .university-page-hero-overlay {
   width: 100%;
+  max-width: 100%;
 }
 
 .page-hero-label {
   display: inline-block;
-
   color: #f4c400;
-
   font-size: 13px;
   font-weight: 700;
-
   letter-spacing: 3px;
-
   margin-bottom: 18px;
 }
 
 .university-page-hero h1 {
   margin: 0 0 20px;
-
   font-size: 58px;
   line-height: 1.1;
-
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .university-page-hero p {
   max-width: 750px;
-
   margin: 0;
-
   color: rgba(255,255,255,.9);
-
   font-size: 18px;
   line-height: 1.8;
 }
-
 
 /* =========================================================
    BREADCRUMB
 ========================================================= */
 
 .page-breadcrumb {
+  width: 100%;
   padding: 16px 0;
-
   background: #f5f6f9;
-
   font-size: 14px;
 }
 
@@ -88,7 +88,6 @@
 
 .page-breadcrumb span {
   color: #999;
-
   margin: 0 10px;
 }
 
@@ -96,57 +95,50 @@
   color: #ed1c24;
 }
 
-
 /* =========================================================
    GENERAL
 ========================================================= */
 
 .info-section {
+  width: 100%;
   padding: 90px 0;
 }
 
 .grey-section {
+  width: 100%;
   padding: 90px 0;
-
   background: #f6f7fa;
 }
 
 .section-heading {
+  width: 100%;
   max-width: 780px;
-
   margin: 0 auto 50px;
-
   text-align: center;
 }
 
 .section-heading-left {
+  width: 100%;
   max-width: 800px;
-
   margin-bottom: 50px;
 }
 
 .section-label {
   display: inline-block;
-
   margin-bottom: 12px;
-
   color: #ed1c24;
-
   font-size: 13px;
   font-weight: 700;
-
   letter-spacing: 2px;
 }
 
 .section-heading h2,
 .section-heading-left h2 {
   color: #071f70;
-
   font-size: 42px;
-
   line-height: 1.2;
-
   margin: 0 0 18px;
+  overflow-wrap: anywhere;
 }
 
 .section-heading h2 span,
@@ -157,12 +149,10 @@
 .section-heading p,
 .section-heading-left p {
   color: #666;
-
   line-height: 1.9;
-
   font-size: 16px;
+  overflow-wrap: anywhere;
 }
-
 
 /* =========================================================
    WHY NU
@@ -170,80 +160,62 @@
 
 .why-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .why-card {
+  min-width: 0;
+  max-width: 100%;
   padding: 35px 30px;
-
   background: #fff;
-
   border: 1px solid #e5e7ec;
-
   border-bottom: 4px solid transparent;
-
   transition: .3s ease;
 }
 
 .why-card:hover {
   transform: translateY(-7px);
-
   border-bottom-color: #ed1c24;
-
-  box-shadow:
-    0 15px 40px rgba(0,0,0,.09);
+  box-shadow: 0 15px 40px rgba(0,0,0,.09);
 }
 
 .why-icon {
   width: 65px;
   height: 65px;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   background: #eef1fa;
-
   border-radius: 50%;
-
   font-size: 28px;
-
   margin-bottom: 22px;
 }
 
 .why-card h3 {
   color: #071f70;
-
   font-size: 20px;
-
   margin-bottom: 12px;
 }
 
 .why-card p {
   margin: 0;
-
   color: #666;
-
   line-height: 1.8;
+  overflow-wrap: anywhere;
 }
-
 
 /* =========================================================
    BLUE HIGHLIGHT
 ========================================================= */
 
 .blue-highlight {
+  width: 100%;
   padding: 90px 0;
-
   color: white;
-
   text-align: center;
-
   background:
     linear-gradient(
       135deg,
@@ -253,7 +225,9 @@
 }
 
 .highlight-content {
+  width: 100%;
   max-width: 850px;
+  margin: 0 auto;
 }
 
 .section-label.light {
@@ -262,177 +236,139 @@
 
 .highlight-content h2 {
   color: #fff;
-
   font-size: 44px;
-
   margin: 0 0 20px;
+  overflow-wrap: anywhere;
 }
 
 .highlight-content p {
   max-width: 700px;
-
   margin: 0 auto 30px;
-
   color: rgba(255,255,255,.82);
-
   line-height: 1.9;
-
   font-size: 16px;
 }
 
 .page-button {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
+  max-width: 100%;
   padding: 14px 27px;
-
   border: 0;
-
   background: #ed1c24;
-
   color: #fff;
-
   font-size: 14px;
-
   font-weight: 600;
-
   text-decoration: none;
-
   cursor: pointer;
-
   transition: .3s ease;
 }
 
 .page-button:hover {
   background: #c9151d;
-
   color: #fff;
-
   transform: translateY(-2px);
 }
-
 
 /* =========================================================
    CONTACT
 ========================================================= */
 
 .contact-page-section {
+  width: 100%;
   background: #fff;
 }
 
 .contact-layout {
   display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns: 1fr 1fr;
   gap: 70px;
-
   align-items: start;
+  width: 100%;
+  max-width: 100%;
+}
+
+.contact-details,
+.university-contact-form {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .contact-details h2 {
   color: #071f70;
-
   font-size: 42px;
-
   line-height: 1.2;
-
   margin: 0 0 20px;
+  overflow-wrap: anywhere;
 }
 
 .contact-details h2 span {
   display: block;
-
   color: #ed1c24;
 }
 
 .contact-details > p {
   color: #666;
-
   line-height: 1.9;
-
   margin-bottom: 35px;
 }
 
 .contact-detail {
   display: flex;
-
   gap: 18px;
-
   margin-bottom: 25px;
+  min-width: 0;
 }
 
 .detail-icon {
   flex-shrink: 0;
-
   width: 50px;
   height: 50px;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   background: #071f70;
-
   color: white;
-
   border-radius: 4px;
-
   font-size: 20px;
 }
 
 .contact-detail h3 {
   color: #071f70;
-
   margin: 0 0 5px;
-
   font-size: 17px;
 }
 
 .contact-detail p {
   color: #666;
-
   margin: 0;
-
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .university-contact-form {
   padding: 40px;
-
   background: #f6f7fa;
-
   border-top: 4px solid #ed1c24;
 }
 
 .university-contact-form h3 {
   color: #071f70;
-
   margin: 0 0 25px;
-
   font-size: 25px;
 }
 
 .university-contact-form input,
 .university-contact-form textarea {
   width: 100%;
-
+  max-width: 100%;
   padding: 14px 16px;
-
   border: 1px solid #ddd;
-
   background: #fff;
-
   outline: none;
-
   font-family: inherit;
-
   margin-bottom: 15px;
-
   font-size: 14px;
 }
 
@@ -443,41 +379,41 @@
 
 .form-two {
   display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns: 1fr 1fr;
   gap: 15px;
+  width: 100%;
 }
 
 .university-contact-form textarea {
   resize: vertical;
 }
 
+.university-contact-form button {
+  max-width: 100%;
+}
 
 /* =========================================================
    MAP
 ========================================================= */
 
 .map-placeholder {
+  width: 100%;
   padding: 0 0 90px;
 }
 
 .map-box {
+  width: 100%;
+  max-width: 100%;
   height: 300px;
-
   background:
     linear-gradient(
       135deg,
       #e8ecf3,
       #dce2ed
     );
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   text-align: center;
 }
 
@@ -487,16 +423,13 @@
 
 .map-box h3 {
   color: #071f70;
-
   margin: 10px 0 5px;
 }
 
 .map-box p {
   color: #666;
-
   margin: 0;
 }
-
 
 /* =========================================================
    CAMPUS / IMAGE TEXT
@@ -504,57 +437,57 @@
 
 .image-text-layout {
   display: grid;
-
-  grid-template-columns:
-    1.1fr .9fr;
-
+  grid-template-columns: 1.1fr .9fr;
   gap: 70px;
-
   align-items: center;
+  width: 100%;
+  max-width: 100%;
 }
 
 .image-text-layout.reverse {
-  grid-template-columns:
-    .9fr 1.1fr;
+  grid-template-columns: .9fr 1.1fr;
+}
+
+.large-page-image {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .large-page-image img {
+  display: block;
   width: 100%;
-
+  max-width: 100%;
   height: 500px;
-
   object-fit: cover;
-
   border-radius: 4px;
+  box-shadow: 0 20px 45px rgba(0,0,0,.12);
+}
 
-  box-shadow:
-    0 20px 45px rgba(0,0,0,.12);
+.page-text {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .page-text h2 {
   color: #071f70;
-
   font-size: 42px;
-
   line-height: 1.2;
-
   margin: 0 0 25px;
+  overflow-wrap: anywhere;
 }
 
 .page-text h2 span {
   display: block;
-
   color: #ed1c24;
 }
 
 .page-text p {
   color: #555;
-
   line-height: 1.9;
-
   margin-bottom: 18px;
+  overflow-wrap: anywhere;
 }
-
 
 /* =========================================================
    FEATURES
@@ -562,47 +495,38 @@
 
 .feature-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  width: 100%;
 }
 
 .feature-box {
+  min-width: 0;
+  max-width: 100%;
   padding: 35px 30px;
-
   background: #fff;
-
   text-align: center;
-
   border: 1px solid #e3e6eb;
 }
 
 .feature-box > span {
   display: block;
-
   font-size: 38px;
-
   margin-bottom: 15px;
 }
 
 .feature-box h3 {
   color: #071f70;
-
   font-size: 20px;
-
   margin-bottom: 12px;
 }
 
 .feature-box p {
   color: #666;
-
   line-height: 1.8;
-
   margin: 0;
+  overflow-wrap: anywhere;
 }
-
 
 /* =========================================================
    FACILITY
@@ -610,58 +534,47 @@
 
 .facility-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  width: 100%;
 }
 
 .facility-card {
+  min-width: 0;
+  max-width: 100%;
   padding: 35px 30px;
-
   border: 1px solid #e4e7ec;
-
   transition: .3s ease;
 }
 
 .facility-card:hover {
   transform: translateY(-5px);
-
-  box-shadow:
-    0 15px 35px rgba(0,0,0,.08);
-
+  box-shadow: 0 15px 35px rgba(0,0,0,.08);
   border-color: #071f70;
 }
 
 .facility-icon {
   font-size: 38px;
-
   margin-bottom: 20px;
 }
 
 .facility-card h3 {
   color: #071f70;
-
   margin-bottom: 12px;
 }
 
 .facility-card p {
   color: #666;
-
   line-height: 1.8;
-
   margin-bottom: 18px;
+  overflow-wrap: anywhere;
 }
 
 .facility-card a {
   color: #ed1c24;
-
   font-weight: 600;
-
   font-size: 14px;
 }
-
 
 /* =========================================================
    GOVERNMENT RECOGNITION
@@ -669,145 +582,113 @@
 
 .recognition-box {
   display: grid;
-
-  grid-template-columns:
-    130px 1fr;
-
+  grid-template-columns: 130px 1fr;
   gap: 40px;
-
+  width: 100%;
+  max-width: 100%;
   padding: 50px;
-
   background: #f6f7fa;
-
   border-left: 5px solid #ed1c24;
 }
 
 .recognition-icon {
   width: 100px;
   height: 100px;
-
   border-radius: 50%;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   background: #071f70;
-
   font-size: 42px;
 }
 
 .recognition-box h2 {
   color: #071f70;
-
   font-size: 40px;
-
   line-height: 1.2;
-
   margin: 0 0 22px;
+  overflow-wrap: anywhere;
 }
 
 .recognition-box h2 span {
   display: block;
-
   color: #ed1c24;
 }
 
 .recognition-box p {
   color: #555;
-
   line-height: 1.9;
+  overflow-wrap: anywhere;
 }
-
 
 /* =========================================================
    TIMELINE
 ========================================================= */
 
 .timeline-section {
+  width: 100%;
   padding: 90px 0;
-
   background: #f6f7fa;
 }
 
 .timeline {
+  width: 100%;
   max-width: 850px;
-
   margin: auto;
+  overflow: hidden;
 }
 
 .timeline-item {
   display: grid;
-
-  grid-template-columns:
-    130px 1fr;
-
+  grid-template-columns: 130px 1fr;
   gap: 30px;
-
   padding-bottom: 30px;
-
   position: relative;
+  min-width: 0;
 }
 
 .timeline-item:not(:last-child)::after {
   content: "";
-
   position: absolute;
-
   left: 64px;
-
   top: 65px;
-
   width: 2px;
-
   height: calc(100% - 20px);
-
   background: #d9dce4;
 }
 
 .timeline-year {
   width: 100px;
   height: 55px;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   background: #ed1c24;
-
   color: #fff;
-
   font-weight: 700;
-
   position: relative;
-
   z-index: 2;
 }
 
 .timeline-content {
+  min-width: 0;
+  max-width: 100%;
   background: #fff;
-
   padding: 25px 30px;
-
   border-left: 3px solid #071f70;
 }
 
 .timeline-content h3 {
   color: #071f70;
-
   margin: 0 0 10px;
 }
 
 .timeline-content p {
   color: #666;
-
   line-height: 1.8;
-
   margin: 0;
+  overflow-wrap: anywhere;
 }
-
 
 /* =========================================================
    INTERNATIONALIZATION
@@ -815,43 +696,37 @@
 
 .international-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  width: 100%;
 }
 
 .international-card {
+  min-width: 0;
+  max-width: 100%;
   background: #fff;
-
   padding: 35px;
-
   border-top: 4px solid #071f70;
 }
 
 .international-card span {
   color: #ed1c24;
-
   font-weight: 700;
-
   font-size: 15px;
 }
 
 .international-card h3 {
   color: #071f70;
-
   margin: 15px 0;
+  overflow-wrap: anywhere;
 }
 
 .international-card p {
   color: #666;
-
   line-height: 1.8;
-
   margin: 0;
+  overflow-wrap: anywhere;
 }
-
 
 /* =========================================================
    MISSION VISION GOAL
@@ -859,18 +734,16 @@
 
 .mission-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  width: 100%;
 }
 
 .mission-card {
+  min-width: 0;
+  max-width: 100%;
   padding: 40px 30px;
-
   background: #f6f7fa;
-
   border-top: 5px solid #071f70;
 }
 
@@ -885,90 +758,70 @@
 .mission-icon {
   width: 65px;
   height: 65px;
-
   background: #fff;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
-
   font-size: 27px;
-
   margin-bottom: 20px;
 }
 
 .mission-card > span {
   color: #ed1c24;
-
   font-size: 12px;
-
   letter-spacing: 2px;
-
   font-weight: 700;
 }
 
 .mission-card h2 {
   color: #071f70;
-
   font-size: 26px;
-
   margin: 12px 0 18px;
 }
 
 .mission-card p {
   color: #666;
-
   line-height: 1.8;
+  overflow-wrap: anywhere;
 }
-
 
 /* =========================================================
    ORGANIZATION CHART
 ========================================================= */
 
 .organization-chart {
+  width: 100%;
   max-width: 1100px;
-
   margin: auto;
-
   text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .org-level {
   display: flex;
-
   justify-content: center;
 }
 
 .org-box {
   min-width: 220px;
-
+  max-width: 100%;
   padding: 20px 25px;
-
   background: #fff;
-
   border: 2px solid #071f70;
-
-  box-shadow:
-    0 7px 20px rgba(0,0,0,.05);
+  box-shadow: 0 7px 20px rgba(0,0,0,.05);
 }
 
 .org-box strong {
   display: block;
-
   color: #071f70;
-
   font-size: 17px;
-
   margin-bottom: 6px;
 }
 
 .org-box span {
   color: #777;
-
   font-size: 13px;
 }
 
@@ -991,34 +844,26 @@
 
 .org-line {
   width: 2px;
-
   height: 40px;
-
   margin: 0 auto;
-
   background: #ccd1db;
 }
 
 .org-columns {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-
   position: relative;
+  width: 100%;
 }
 
 .org-columns:last-child {
-  grid-template-columns:
-    repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .small-org {
   min-width: 0;
 }
-
 
 /* =========================================================
    VICE RECTOR
@@ -1026,115 +871,115 @@
 
 .vice-message-layout {
   display: grid;
-
-  grid-template-columns:
-    330px 1fr;
-
+  grid-template-columns: 330px 1fr;
   gap: 70px;
-
   align-items: start;
+  width: 100%;
+  max-width: 100%;
 }
 
 .vice-photo-placeholder {
   width: 100%;
-
   height: 430px;
-
   background:
     linear-gradient(
       135deg,
       #071f70,
       #1741a8
     );
-
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
-
   color: white;
 }
 
 .vice-photo-placeholder span {
   width: 140px;
   height: 140px;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
-
   background: rgba(255,255,255,.12);
-
   font-size: 65px;
-
   margin-bottom: 20px;
 }
 
 .vice-photo-placeholder p {
   color: #fff;
-
   font-size: 18px;
-
   margin: 0;
+}
+
+.vice-message {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .vice-message h2 {
   color: #071f70;
-
   font-size: 42px;
-
   line-height: 1.2;
-
   margin: 0 0 25px;
+  overflow-wrap: anywhere;
 }
 
 .vice-message h2 span {
   display: block;
-
   color: #ed1c24;
 }
 
 .vice-message > p {
   color: #555;
-
   line-height: 1.95;
-
   font-size: 16px;
-
   margin-bottom: 20px;
+  overflow-wrap: anywhere;
 }
 
 .vice-signature {
   margin-top: 35px;
-
   padding-top: 20px;
-
   border-top: 1px solid #ddd;
 }
 
 .vice-signature strong {
   display: block;
-
   color: #071f70;
-
   font-size: 18px;
 }
 
 .vice-signature span {
   display: block;
-
   color: #777;
-
   margin-top: 5px;
-
   font-size: 14px;
 }
 
+/* =========================================================
+   GLOBAL CONTENT SAFETY
+========================================================= */
+
+.university-page img {
+  max-width: 100%;
+  height: auto;
+}
+
+.university-page p,
+.university-page h1,
+.university-page h2,
+.university-page h3,
+.university-page h4,
+.university-page span,
+.university-page a {
+  overflow-wrap: anywhere;
+}
+
+.university-page iframe,
+.university-page video {
+  max-width: 100%;
+}
 
 /* =========================================================
    RESPONSIVE
@@ -1155,8 +1000,7 @@
   .feature-grid,
   .international-grid,
   .mission-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .contact-layout,
@@ -1164,7 +1008,6 @@
   .image-text-layout.reverse,
   .vice-message-layout {
     grid-template-columns: 1fr;
-
     gap: 45px;
   }
 
@@ -1174,18 +1017,21 @@
 
   .org-columns,
   .org-columns:last-child {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
-
 }
-
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
+
+  .university-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 
   .info-section,
   .grey-section,
@@ -1224,38 +1070,33 @@
 
   .form-two {
     grid-template-columns: 1fr;
-
     gap: 0;
   }
 
   .university-contact-form {
+    width: 100%;
     padding: 25px;
   }
 
   .recognition-box {
     grid-template-columns: 1fr;
-
     padding: 30px;
-
     gap: 25px;
   }
 
   .recognition-icon {
     width: 75px;
     height: 75px;
-
     font-size: 30px;
   }
 
   .timeline-item {
     grid-template-columns: 75px 1fr;
-
     gap: 15px;
   }
 
   .timeline-year {
     width: 70px;
-
     font-size: 13px;
   }
 
@@ -1284,4 +1125,7 @@
     font-size: 32px;
   }
 
+  .large-page-image img {
+    height: 300px;
+  }
 }

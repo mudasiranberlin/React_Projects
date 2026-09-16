@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import "./mudasir.css";
+import AboutLayout from "./AboutLayout";
 
 const aboutSections = [
   {
@@ -91,7 +92,9 @@ function PageHero() {
 
       <div className="reactor-breadcrumb">
         <div className="container">
+          
           <Link to="/">Home</Link>
+          
 
           <span>/</span>
 

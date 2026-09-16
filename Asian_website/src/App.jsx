@@ -79,12 +79,14 @@ function App() {
        <NUCalendar2023/> */}
       
 
-<h1>Start Routing</h1> 
+
     <Routes>
       {/* other routes */}
 
       <Route path="/about/*" element={<AboutRoutes />} />
     </Routes>
+
+    <Footer/>
 
 
 

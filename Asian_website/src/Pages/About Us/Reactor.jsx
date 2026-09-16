@@ -13,6 +13,7 @@ import Mudasir from "./Mudasir";
 import PageHero from "./Pagehero";
 
 import "./Reactor.css";
+import AboutLayout from "./AboutLayout";
 
 // function PageHero({
 //   label = "ABOUT OUR INSTITUTION",
@@ -47,7 +48,9 @@ import "./Reactor.css";
 export default function Reactor() {
   return (
     <main className="university-page">
+       <ScrollToTop />
       <Mudasir />
+      
 
       <MessageOfViceRector PageHero={PageHero} />
 

@@ -1,4 +1,6 @@
- import { Route, Routes } from 'react-router'
+import { Routes, Route } from "react-router";
+
+import AboutLayout from "./AboutLayout";
 
 import Mudasir from "./Mudasir";
 import MessageOfViceRector from "./MessageOfViceRector";
@@ -10,62 +12,120 @@ import GovernmentRecognition from "./GovernmentRecognition";
 import LibraryAndFacility from "./LibraryAndFacility";
 import Campus from "./Campus";
 import ContactUs from "./ContactUs";
-import PageHero from './Pagehero.jsx';
-import ContactForm from './ContactForm.jsx'
-import AboutLayout from './Mudasir';
+
+import PageHero from "./Pagehero.jsx";
+
 
 function AboutRoutes() {
   return (
     <Routes>
-      <Route index element={<Mudasir />} />
 
+      {/* ABOUT LAYOUT */}
       <Route
-        path="vice-rector"
-        element={<MessageOfViceRector PageHero={PageHero} />}
-      />
+        element={<AboutLayout />}
+      >
 
-      <Route
-        path="why-aic"
-        element={< WhyAIC PageHero={PageHero}/>}
-      />
+        {/* /about */}
+        <Route
+          index
+          element={<Mudasir />}
+        />
+        
 
-      <Route
-        path="structure"
-        element={<StructureOfNU  PageHero={PageHero}/>}
-      />
+        {/* /about/vice-rector */}
+        <Route
+          path="vice-rector"
+          element={
+            <MessageOfViceRector
+              PageHero={PageHero}
+            />
+          }
+        />
 
-      <Route
-        path="mission"
-        element={<MissionVisionGoal PageHero={PageHero} />}
-      />
+        {/* /about/why-aic */}
+        <Route
+          path="why-aic"
+          element={
+            <WhyAIC
+              PageHero={PageHero}
+            />
+          }
+        />
 
-      <Route
-        path="internationalization"
-        element={<Internationalization PageHero={PageHero} />
-}
-      />
-      
+        {/* /about/structure */}
+        <Route
+          path="structure"
+          element={
+            <StructureOfNU
+              PageHero={PageHero}
+            />
+          }
+        />
 
-      <Route
-        path="recognition"
-        element={<GovernmentRecognition PageHero={PageHero} />}
-      />
+        {/* /about/mission */}
+        <Route
+          path="mission"
+          element={
+            <MissionVisionGoal
+              PageHero={PageHero}
+            />
+          }
+        />
 
-      <Route
-        path="library"
-        element={<LibraryAndFacility PageHero={PageHero} />}
-      />
+        {/* /about/internationalization */}
+        <Route
+          path="internationalization"
+          element={
+            <Internationalization
+              PageHero={PageHero}
+            />
+          }
+        />
 
-      <Route
-        path="campus"
-        element={<Campus PageHero={PageHero} />}
-      />
+        {/* /about/recognition */}
+        <Route
+          path="recognition"
+          element={
+            <GovernmentRecognition
+              PageHero={PageHero}
+            />
+          }
+        />
 
-      <Route
-        path="contact"
-        element={<ContactUs PageHero={PageHero} ContactForm={ContactForm}  />}
-      />
+        {/* /about/library */}
+        <Route
+          path="library"
+          element={
+            <LibraryAndFacility
+              PageHero={PageHero}
+            />
+          }
+        />
+
+        {/* /about/campus */}
+        <Route
+          path="campus"
+          element={
+            <Campus
+              PageHero={PageHero}
+            />
+          }
+        />
+
+        {/* /about/contact */}
+        <Route
+          path="contact"
+          element={
+            <ContactUs
+              PageHero={PageHero}
+            />
+          }
+        />
+
+      </Route>
+
     </Routes>
   );
 }
-export default AboutRoutes
+
+export default AboutRoutes;

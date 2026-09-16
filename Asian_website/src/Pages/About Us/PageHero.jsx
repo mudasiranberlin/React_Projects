@@ -1,31 +1,54 @@
-function PageHero({
-  label = "ABOUT OUR INSTITUTION",
-  title = "About Us",
-  description = "",
-}) {
+function PageHero({ sidebarOpen, setSidebarOpen }) {
   return (
     <>
-      <section className="university-page-hero">
-        <div className="university-page-hero-overlay">
+      <section className="reactor-hero">
+        <div className="reactor-hero-overlay">
+
           <div className="container">
-            <span className="page-hero-label">{label}</span>
 
-            <h1>{title}</h1>
+            {/* LABEL + MENU BUTTON SAME LINE */}
+            <div className="reactor-hero-top">
 
-            {description && <p>{description}</p>}
+              <button
+                className="about-menu-button"
+                onClick={() => setSidebarOpen(!sidebarOpen)}
+                aria-label="Toggle About menu"
+              >
+                {sidebarOpen ? "✕" : "☰"}
+              </button>
+
+              <span className="reactor-hero-label">
+                ABOUT OUR INSTITUTION
+              </span>
+
+            </div>
+
+            <h1>About Us</h1>
+
+            <p>
+              Discover our leadership, academic vision,
+              institutional structure, facilities,
+              international activities and university
+              community.
+            </p>
+
           </div>
+
         </div>
       </section>
 
-      <div className="page-breadcrumb">
+      <div className="reactor-breadcrumb">
         <div className="container">
-          <a href="/">Home</a>
+
+          <Link to="/">Home</Link>
+
           <span>/</span>
-          <strong>{title}</strong>
+
+          <strong>About Us</strong>
+
         </div>
       </div>
     </>
   );
 }
-
-export default PageHero;
+export default PageHero

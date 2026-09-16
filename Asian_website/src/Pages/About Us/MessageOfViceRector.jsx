@@ -1,15 +1,21 @@
 function MessageOfViceRector({ PageHero }) {
   return (
     <main className="university-page">
+
+      {/* PAGE HERO */}
       <PageHero
         label="LEADERSHIP MESSAGE"
         title="Message Of Vice Rector"
         description="A message from the Vice Rector to students, faculty, partners and the wider university community."
       />
 
+      {/* VICE RECTOR MESSAGE */}
       <section className="info-section vice-rector-section">
         <div className="container">
+
           <div className="vice-message-layout">
+
+            {/* PHOTO */}
             <div className="vice-photo">
               <div className="vice-photo-placeholder">
                 <span>👤</span>
@@ -17,7 +23,10 @@ function MessageOfViceRector({ PageHero }) {
               </div>
             </div>
 
+
+            {/* MESSAGE */}
             <div className="vice-message">
+
               <span className="section-label">
                 MESSAGE FROM THE VICE RECTOR
               </span>
@@ -92,29 +101,45 @@ function MessageOfViceRector({ PageHero }) {
                 and future success.
               </p>
 
+
+              {/* SIGNATURE */}
               <div className="vice-signature">
                 <strong>Vice Rector</strong>
-                <span>Asian Institute of Cambodia</span>
+                <span>
+                  Asian Institute of Cambodia
+                </span>
               </div>
+
             </div>
+
           </div>
+
         </div>
       </section>
 
+
+      {/* HIGHLIGHT */}
       <section className="blue-highlight">
+
         <div className="container highlight-content">
+
           <span className="section-label light">
             OUR SHARED FUTURE
           </span>
 
-          <h2>One Community, One Destiny</h2>
+          <h2>
+            One Community, One Destiny
+          </h2>
 
           <p>
-            Working together to develop good human resources
-            in a global family.
+            Working together to develop good human
+            resources in a global family.
           </p>
+
         </div>
+
       </section>
+
     </main>
   );
 }
