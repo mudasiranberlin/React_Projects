@@ -9,6 +9,8 @@ import LibraryAndFacility from './LibraryAndFacility';
 import Campus from './Campus';
 import ContactForm from './ContactForm';
 import Internationalization from './Internationalization';
+import AcademicNavigation from '../Academic/AcademicNavigation';
+import AcademicUnit from '../Academic/AcademicUnit';
 
 function PageHero({ label="wel", title="wel", description="wel" }) {
   return (
@@ -561,6 +563,7 @@ export default function Reactor() {
        {/* <ContactUs PageHero={<PageHero />}ContactForm={<ContactForm />} />  */}
 
 <h2>Here we start</h2>
+ <AcademicNavigation academicUnits={academicUnits} />
 
 <MessageOfViceRector
   PageHero={PageHero}

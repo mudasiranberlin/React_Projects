@@ -1,24 +1,4 @@
 function Teachers() {
-  const events = [
-  {
-    date: "15",
-    month: "SEP",
-    title: "New Student Orientation",
-    text: "Welcome program for new students joining AIC.",
-  },
-  {
-    date: "22",
-    month: "SEP",
-    title: "ASEAN Education Conference",
-    text: "Connect with educators, researchers and students from across ASEAN.",
-  },
-  {
-    date: "05",
-    month: "OCT",
-    title: "AIC Student Festival",
-    text: "A day of student activities, cultural performances and competitions.",
-  },
-];
 const teachers = [
   {
     name: "Dr. Ahmed Khan",
@@ -38,6 +18,7 @@ const teachers = [
     image:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
   },
+  
 ];
   return (
     <section

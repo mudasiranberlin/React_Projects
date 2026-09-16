@@ -108,7 +108,7 @@ export default function AboutAIC() {
 
               <div className="aic-emblem">
                 <img
-                  src="/aic-logo.jpg"
+                  src="./public/images/1.jpg"
                   alt="ASEAN Institute of Cambodia"
                 />
               </div>

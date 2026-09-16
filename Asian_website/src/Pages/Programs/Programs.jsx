@@ -36,6 +36,7 @@ function Programs() {
     description:
       "Explore society, culture, communication, development and human behavior.",
   },
+  
 ];
   return (
     <section

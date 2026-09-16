@@ -15,9 +15,8 @@ import Reactor from './Pages/About Us/Reactor';
 import Academics from './Pages/Academic/Academics';
 import DepartmentMenu from './Pages/Academic2/Acad';
 import Admissions from './Pages/Admission/undergraduate';
-
 import Collaborations from './Pages/Collaborations/Collaborations';
-import Collaborationss from './Pages/Collaborations/Collaborationss';
+import Collaborationss, { AUPFPage } from './Pages/Collaborations/Collaborationss';
 
 import Publication from './Pages/Publication/Publication';
 
@@ -26,11 +25,27 @@ import AcademicPrograms from './Pages/Graduate/AcademicPrograms';
 import StudentServices from './Pages/StudentServices/StudentServices';
 
  import NUCalendar2023 from './Pages/Calendar/NUCalendar2023'
+ import { Route, Routes } from 'react-router'
+import GoverningCouncilPage from './Pages/Collaborations/GoverningCouncilPage';
+
+ 
 
 function App() {
 
   return (
     <>
+    <Routes>
+  <Route index element={<About/>} />
+  <Route path="/header" element={<Headers />}/>
+  <Route path="/stats" element={<Stats />}/>
+  <Route path="/programs" element={<Programs />}/>
+  <Route path="/events" element={<Events />}/>
+  <Route path="/about" element={<Reactor />} />
+  <Route
+          path="/collaborations/governing-council"
+          element={<GoverningCouncilPage/>}
+        />
+</Routes>
     <Headers/>
       <main>
         <Hero/>
