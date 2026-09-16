@@ -26,7 +26,6 @@ import StudentServices from './Pages/StudentServices/StudentServices';
 
  import NUCalendar2023 from './Pages/Calendar/NUCalendar2023'
  import { Route, Routes } from 'react-router'
-import GoverningCouncilPage from './Pages/Collaborations/GoverningCouncilPage';
 
  
 
@@ -34,18 +33,14 @@ function App() {
 
   return (
     <>
-    <Routes>
+    {/* <Routes>
   <Route index element={<About/>} />
   <Route path="/header" element={<Headers />}/>
   <Route path="/stats" element={<Stats />}/>
   <Route path="/programs" element={<Programs />}/>
   <Route path="/events" element={<Events />}/>
-  <Route path="/about" element={<Reactor />} />
-  <Route
-          path="/collaborations/governing-council"
-          element={<GoverningCouncilPage/>}
-        />
-</Routes>
+  <Route path="/collaborations/aupf" element={<AUPFPage />} />
+</Routes> */}
     <Headers/>
       <main>
         <Hero/>
