@@ -29,6 +29,8 @@ import StudentServices from './Pages/StudentServices/StudentServices';
 
  import NUCalendar2023 from './Pages/Calendar/NUCalendar2023'
 
+ import DepartmentMenuu from './Pages/Academic3/Acad';
+
 
 
 
@@ -54,9 +56,19 @@ export default function App() {
       <Reactor/>
       <h1>Welcome back</h1>
       <Academics/>  
-      <h2>Department</h2>   
+      <h2>Department2</h2>   
 
       <DepartmentMenu/>
+      <h2>Welcome department</h2>
+      <main>
+        <DepartmentMenuu/>
+
+      </main>
+
+      
+
+
+      <h1>End of Department</h1>
       <h1>Google is Good</h1>
       <Admissions/>
        <h1>Google is Bad</h1>

@@ -19,7 +19,6 @@ import PageHero from "./Pagehero.jsx";
 function AboutRoutes() {
   return (
     <Routes>
-
       {/* ABOUT LAYOUT */}
       <Route
         element={<AboutLayout />}
