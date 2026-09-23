@@ -140,7 +140,16 @@ const logoutUser = asyncHandler(async (req,res) => {
     await User.findById(
         req.user._id,{
         $unset:{
-            refreshToken:1 //this removes the feild from the document
+            refreshToken:1
+
+//             this removes the feild from the document
+//             Want to change a value? Use $set.
+// 👉          Want to delete a field? Use $unset.
+//             Operator	Meaning
+//             $set	✏️ Change/set the value
+//             $unset	🗑️ Remove the field
+//             $set: { refreshToken: null }	Set it to null
+//             $set: { refreshToken: undefined }	Not the correct way to delete it
         }
     },
     {
