@@ -7,6 +7,7 @@ import FoodDetails from "./pages/FoodDetails";
 import Favorites from "./pages/Favorites";
 import AddPlace from "./pages/AddPlace";
 import { initialPlaces } from "./data/foodData";
+import Admin from "./components/Admin";
 
 export default function App() {
   const [places, setPlaces] = useState(() => {
@@ -138,6 +139,8 @@ export default function App() {
           }
         />
         <Route path="/add" element={<AddPlace onAddPlace={addPlace} />} />
+
+         <Route path="/mudi" element={<Admin />} />
       </Routes>
 
       <footer className="footer">
